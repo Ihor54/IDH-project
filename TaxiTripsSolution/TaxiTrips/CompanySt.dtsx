@@ -1,0 +1,1112 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/23/2020 3:45:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-MJKQMGF"
+  DTS:CreatorName="DESKTOP-MJKQMGF\Ihor Debelyi"
+  DTS:DTSID="{2FFADE52-3A68-4ED3-B527-F28524451916}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{C03E045B-2B6F-4F89-AFB9-A68F4F0E39B2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CompanyErrorLog]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C85C1B8B-D1C6-4B78-A17B-94F5A1C322AB}"
+      DTS:ObjectName="CompanyErrorLog">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="E:\PJATK studies\Masters\IDH\IDH project\CompanyErrorLog.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Flat File Source Error Output Column"
+              DTS:DTSID="{C460726E-3F91-4BD2-A8ED-6B58CBF4C42E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{D5B6D3B9-182D-43B5-B6B8-37B0BBC48AB7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{C1215078-F62F-4B00-8ABE-3F7EFFF8D378}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost\SQLEXPRESS.IDH1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{00B5FF6A-ADB4-41C5-84A1-10868FB4E5C3}"
+      DTS:ObjectName="localhost\SQLEXPRESS.IDH1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=IDH;Integrated Security=True;Application Name=SSIS-Package-{00B5FF6A-ADB4-41C5-84A1-10868FB4E5C3}localhost\SQLEXPRESS.IDH1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[test file manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2EA0CB89-0799-4E93-80BB-4C9A2C3E1782}"
+      DTS:ObjectName="test file manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="E:\PJATK studies\Masters\IDH\IDH project\taxi_drivers_test.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip ID"
+              DTS:DTSID="{1CCBC76A-380E-42B2-8499-F5D54AC22AB9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Taxi ID"
+              DTS:DTSID="{BE1B6D58-F30A-477B-875D-5B9A089E950B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Start Timestamp"
+              DTS:DTSID="{14D6F31D-47BD-45C3-95C6-BC5C4F07406E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip End Timestamp"
+              DTS:DTSID="{FC0DC936-0FC1-4727-BFE1-BAD686F14A2E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Seconds"
+              DTS:DTSID="{B6E6AE10-0BE6-4B5B-93A3-0644F862A2D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Miles"
+              DTS:DTSID="{7154C1AE-5AF1-4EF9-A117-3B82BD1F9B6A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Census Tract"
+              DTS:DTSID="{15A1135D-4500-4542-99FF-8BB8A95D4200}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Census Tract"
+              DTS:DTSID="{6F82663E-A03B-4BCB-9326-42D9F7F4D707}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Community Area"
+              DTS:DTSID="{A719A553-FC9C-4B8B-B8EA-F6C23D6FAA2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Community Area"
+              DTS:DTSID="{0C55DE52-AEE1-40D7-9F5F-16ED22DD37BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fare"
+              DTS:DTSID="{B0473D7A-F5CA-4B96-AC61-8D38A7FB7EAD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tips"
+              DTS:DTSID="{0E4930EE-4873-435E-A18C-0747ED28C681}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tolls"
+              DTS:DTSID="{F9275691-CAE8-4D1B-B376-1C0E30694D22}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Extras"
+              DTS:DTSID="{42E4009C-17FC-4FC5-ACC6-57D941E1C332}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Total"
+              DTS:DTSID="{2F102528-90D9-4184-800D-D0414A8D739B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Payment Type"
+              DTS:DTSID="{7A6A2A77-F030-4E16-8698-8D96189C2CDE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Company"
+              DTS:DTSID="{7312DBE6-BDFE-4E4F-874D-4910A7C760DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Latitude"
+              DTS:DTSID="{A01E1E26-7A32-4CA7-B6B6-B50EA4E630B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Longitude"
+              DTS:DTSID="{46498DD5-0270-499C-95FB-12E580203DB2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Location"
+              DTS:DTSID="{53FCBFB7-ED80-4A8D-8E04-FDE51A434145}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid Latitude"
+              DTS:DTSID="{81654234-7C0E-46F0-894F-74C4B08F2463}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid Longitude"
+              DTS:DTSID="{BA9BE66F-AC52-48B4-9B48-5F388F22D6FF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid  Location"
+              DTS:DTSID="{46648F4F-B1C2-479C-859F-D98F0955142D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B153F495-9798-486F-AE89-CE3043E59A1E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CleanCompanySt">
+      <DTS:VariableValue
+        DTS:DataType="8">delete from Company;</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Clean table CompanySt"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{26563072-B932-4BF3-BEE1-35B84EA18520}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clean table CompanySt"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{00B5FF6A-ADB4-41C5-84A1-10868FB4E5C3}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::CleanCompanySt" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import data into CompanySt"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{300E7472-AE72-44F3-A41C-2D19EE6E7E42}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import data into CompanySt"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import data into CompanySt\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import data into CompanySt\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import data into CompanySt\Data Conversion.Inputs[Data Conversion Input].Columns[Company]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Company"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Import data into CompanySt\Sort and remove duplicate companies.Outputs[Sort Output].Columns[Company]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import data into CompanySt\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Import data into CompanySt\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into CompanySt\Data Conversion.Outputs[Data Conversion Output].Columns[Company Converted]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="200"
+                      lineageId="Package\Import data into CompanySt\Data Conversion.Outputs[Data Conversion Output].Columns[Company Converted]"
+                      name="Company Converted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import data into CompanySt\Sort and remove duplicate companies.Outputs[Sort Output].Columns[Company]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import data into CompanySt\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Import data into CompanySt\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into CompanySt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import data into CompanySt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import data into CompanySt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import data into CompanySt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import data into CompanySt\driver data csv - source file"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="driver data csv - source file"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import data into CompanySt\driver data csv - source file.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[test file manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[test file manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].Columns[Company]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Company]"
+                      length="50"
+                      lineageId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].Columns[Company]"
+                      name="Company"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Trip ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Taxi ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Taxi ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Trip Start Timestamp]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip Start Timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Trip End Timestamp]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip End Timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Trip Seconds]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip Seconds" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Trip Miles]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip Miles" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Pickup Census Tract]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Census Tract" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Dropoff Census Tract]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Census Tract" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Pickup Community Area]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Community Area" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Dropoff Community Area]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Community Area" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Fare]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Fare" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Tips]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Tips" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Tolls]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Tolls" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Extras]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Extras" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Trip Total]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip Total" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Payment Type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Payment Type" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Company]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Company" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Pickup Centroid Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Centroid Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Pickup Centroid Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Centroid Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Pickup Centroid Location]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Centroid Location" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Dropoff Centroid Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Centroid Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Dropoff Centroid Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Centroid Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].ExternalColumns[Dropoff Centroid  Location]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Centroid  Location" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import data into CompanySt\SavingErrorLog"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="SavingErrorLog"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import data into CompanySt\SavingErrorLog.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CompanyErrorLog]"
+                  connectionManagerRefId="Package.ConnectionManagers[CompanyErrorLog]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import data into CompanySt\SavingErrorLog.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import data into CompanySt\SavingErrorLog.Inputs[Flat File Destination Input].Columns[Flat File Source Error Output Column]"
+                      cachedCodepage="65001"
+                      cachedDataType="text"
+                      cachedName="Flat File Source Error Output Column"
+                      externalMetadataColumnId="Package\Import data into CompanySt\SavingErrorLog.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                      lineageId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]" />
+                    <inputColumn
+                      refId="Package\Import data into CompanySt\SavingErrorLog.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Import data into CompanySt\SavingErrorLog.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Import data into CompanySt\SavingErrorLog.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Import data into CompanySt\SavingErrorLog.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\SavingErrorLog.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      name="Flat File Source Error Output Column" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\SavingErrorLog.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\SavingErrorLog.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Import data into CompanySt\Sort and remove duplicate companies"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort and remove duplicate companies"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import data into CompanySt\Sort and remove duplicate companies.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import data into CompanySt\Sort and remove duplicate companies.Inputs[Sort Input].Columns[Company]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Company"
+                      lineageId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].Columns[Company]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import data into CompanySt\Sort and remove duplicate companies.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into CompanySt\Sort and remove duplicate companies.Outputs[Sort Output].Columns[Company]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import data into CompanySt\Sort and remove duplicate companies.Outputs[Sort Output].Columns[Company]"
+                      name="Company"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output].Columns[Company]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import data into CompanySt\target star schema database"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="target star schema database"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Company"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import data into CompanySt\target star schema database.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost\SQLEXPRESS.IDH1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost\SQLEXPRESS.IDH1]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import data into CompanySt\target star schema database.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import data into CompanySt\target star schema database.Inputs[ADO NET Destination Input].Columns[Company Converted]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Company Converted"
+                      externalMetadataColumnId="Package\Import data into CompanySt\target star schema database.Inputs[ADO NET Destination Input].ExternalColumns[CompanyName]"
+                      lineageId="Package\Import data into CompanySt\Data Conversion.Outputs[Data Conversion Output].Columns[Company Converted]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\target star schema database.Inputs[ADO NET Destination Input].ExternalColumns[IdCompany]"
+                      dataType="i4"
+                      name="IdCompany" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into CompanySt\target star schema database.Inputs[ADO NET Destination Input].ExternalColumns[CompanyName]"
+                      dataType="wstr"
+                      length="200"
+                      name="CompanyName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import data into CompanySt\target star schema database.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Import data into CompanySt\target star schema database.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into CompanySt\target star schema database.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import data into CompanySt\target star schema database.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import data into CompanySt\target star schema database.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import data into CompanySt\target star schema database.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import data into CompanySt.Paths[Data Conversion Output]"
+              endId="Package\Import data into CompanySt\target star schema database.Inputs[ADO NET Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Import data into CompanySt\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Import data into CompanySt.Paths[Flat File Source Error Output]"
+              endId="Package\Import data into CompanySt\SavingErrorLog.Inputs[Flat File Destination Input]"
+              name="Flat File Source Error Output"
+              startId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Error Output]" />
+            <path
+              refId="Package\Import data into CompanySt.Paths[Flat File Source Output]"
+              endId="Package\Import data into CompanySt\Sort and remove duplicate companies.Inputs[Sort Input]"
+              name="Flat File Source Output"
+              startId="Package\Import data into CompanySt\driver data csv - source file.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Import data into CompanySt.Paths[Sort Output]"
+              endId="Package\Import data into CompanySt\Data Conversion.Inputs[Data Conversion Input]"
+              name="Sort Output"
+              startId="Package\Import data into CompanySt\Sort and remove duplicate companies.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5B2FDC35-B0CC-4242-A854-57070CB3F8B5}"
+      DTS:From="Package\Clean table CompanySt"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import data into CompanySt" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Import data into CompanySt"
+          TopLeft="197,168" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Clean table CompanySt"
+          TopLeft="212,59" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="307.25,101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67"
+              Start="0,0"
+              End="0,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import data into CompanySt">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Import data into CompanySt\driver data csv - source file"
+          TopLeft="255,144" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Import data into CompanySt\SavingErrorLog"
+          TopLeft="647,140" />
+        <EdgeLayout
+          Id="Package\Import data into CompanySt.Paths[Flat File Source Error Output]"
+          TopLeft="465,163">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="182,0"
+              Start="0,0"
+              End="174.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="174.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="23.62361328125,5,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="263,42"
+          Id="Package\Import data into CompanySt\Sort and remove duplicate companies"
+          TopLeft="231,251" />
+        <EdgeLayout
+          Id="Package\Import data into CompanySt.Paths[Flat File Source Output]"
+          TopLeft="361.25,186">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Import data into CompanySt\Data Conversion"
+          TopLeft="289,340" />
+        <EdgeLayout
+          Id="Package\Import data into CompanySt.Paths[Sort Output]"
+          TopLeft="366,293">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Import data into CompanySt\target star schema database"
+          TopLeft="250,439" />
+        <EdgeLayout
+          Id="Package\Import data into CompanySt.Paths[Data Conversion Output]"
+          TopLeft="369.5,382">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.5,57"
+              Start="0,0"
+              End="-10.5,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="-4,28.5" />
+                  <mssgle:LineSegment
+                    End="-6.5,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.5,28.5"
+                    Point2="-10.5,28.5"
+                    Point3="-10.5,32.5" />
+                  <mssgle:LineSegment
+                    End="-10.5,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import data into CompanySt\target star schema database">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
