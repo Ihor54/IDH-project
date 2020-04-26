@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{76321C4D-6FF9-4CC7-A6E5-E521FB6ED05B}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{33AC0A8C-2272-49F0-B83D-C908736AA58C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="E:\PJATK studies\Masters\IDH\IDH project\New Text Document.txt">
+          DTS:ConnectionString="E:\PJATK studies\Masters\IDH\IDH project\IDH-project\TripPaymentErrorLog.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -37,7 +37,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="Flat File Source Error Output Column"
-              DTS:DTSID="{16284695-0A98-430A-8E07-21BED42B7D37}"
+              DTS:DTSID="{A2005172-6EA9-4C1A-96B8-5FE924338E2B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -45,7 +45,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{442DD4AB-74BF-4DBD-B796-F673183E8B2B}"
+              DTS:DTSID="{7175ECFF-D375-43D4-B5CD-27239C50F047}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -53,7 +53,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{DBECAB67-1B9F-4186-B5DB-10418CEAFDFE}"
+              DTS:DTSID="{595FB9F9-674A-4D3D-B67A-2223FD0BB29E}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
