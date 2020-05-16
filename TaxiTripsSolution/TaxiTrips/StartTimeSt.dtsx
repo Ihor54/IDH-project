@@ -1,0 +1,1055 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/16/2020 5:11:02 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-MJKQMGF"
+  DTS:CreatorName="DESKTOP-MJKQMGF\Ihor Debelyi"
+  DTS:DTSID="{B586FB21-84EF-47E0-ABD5-2C76AB747B28}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{1FC30220-4AF1-47B5-80DE-DD7577103C99}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost\SQLEXPRESS.IDH1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{3AAFEA15-C19E-4C81-8FEF-AAFA45A7505B}"
+      DTS:ObjectName="localhost\SQLEXPRESS.IDH1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=IDH;Integrated Security=True;Application Name=SSIS-Package1-{3AAFEA15-C19E-4C81-8FEF-AAFA45A7505B}localhost\SQLEXPRESS.IDH1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Source file Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1859F023-501C-4617-A0E5-A887462A2FFA}"
+      DTS:ObjectName="Source file Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="E:\PJATK studies\Masters\IDH\IDH project\taxi_drivers_test.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip ID"
+              DTS:DTSID="{3E10843C-0CE5-4E2A-A079-17B8AA5D7682}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Taxi ID"
+              DTS:DTSID="{E68EFBED-11E9-43CC-8E8E-F2569A757725}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Start Timestamp"
+              DTS:DTSID="{8B82D9B8-D1A4-4B52-A85A-B1D382EF8237}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip End Timestamp"
+              DTS:DTSID="{85E96837-0D3C-47DC-9579-00933EB039DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Seconds"
+              DTS:DTSID="{9FC73FFC-B820-4C01-9948-2C3A36C51C67}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Miles"
+              DTS:DTSID="{7BF84C0F-3C81-4F67-8D6E-135D35778CB7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Census Tract"
+              DTS:DTSID="{4576666F-8877-4D83-801B-43933CDF7BB7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Census Tract"
+              DTS:DTSID="{952402DB-826E-45D1-A05D-412D5838A91D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Community Area"
+              DTS:DTSID="{5C0F8049-3C37-46A2-A678-90B614108EE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Community Area"
+              DTS:DTSID="{3A60A502-BF15-461C-924E-D66A01F17B37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fare"
+              DTS:DTSID="{7C57E6C2-44B3-44EB-8B26-81D5D8422053}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tips"
+              DTS:DTSID="{A1F8F07D-77B0-4F03-A781-1C018AA7C4CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tolls"
+              DTS:DTSID="{3A09B84A-C50A-487F-AA30-6A178E54F02E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Extras"
+              DTS:DTSID="{DF2A4F67-F6E9-4D59-82B2-703063016BDF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Total"
+              DTS:DTSID="{9A7E3FE5-AF27-4FC5-9792-64D641190D85}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Payment Type"
+              DTS:DTSID="{02443934-7287-4689-9875-B2C187233070}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Company"
+              DTS:DTSID="{44816B52-9B27-42E2-B49C-2762740B7D60}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Latitude"
+              DTS:DTSID="{5441562C-647A-4F90-A23A-0EBFB5A93453}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Longitude"
+              DTS:DTSID="{0EF013FC-A9B5-414B-B9C0-5B58AC3DEAAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Location"
+              DTS:DTSID="{13D73865-1B6B-4817-8148-1E0A7A0D5F40}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid Latitude"
+              DTS:DTSID="{7CE6D007-A83A-4B4D-B207-B75D567152E6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid Longitude"
+              DTS:DTSID="{2D22A03A-90F4-423A-856A-4073A09171B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid  Location"
+              DTS:DTSID="{AB5C8671-9B7E-4CD3-81F9-6415E3B98971}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D5BD3EA7-0644-4B2B-967A-6C168C6A50BF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CleanStartTime">
+      <DTS:VariableValue
+        DTS:DataType="8">delete from TimeStart;</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\clean table TimeStart"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F48BA2E2-C7FC-4CB5-8B17-593443CB5260}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="clean table TimeStart"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3AAFEA15-C19E-4C81-8FEF-AAFA45A7505B}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::CleanStartTime" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import data into TimeStartSt"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{CBAD0A3B-7196-4A0B-9D39-EC55DA4F58B5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import data into TimeStartSt"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import data into TimeStartSt\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import data into TimeStartSt\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import data into TimeStartSt\Data Conversion.Inputs[Data Conversion Input].Columns[Trip Start Timestamp]"
+                      cachedDataType="date"
+                      cachedName="Trip Start Timestamp"
+                      lineageId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Import data into TimeStartSt\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output].Columns[TimeStart]"
+                      dataType="dbTime"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output].Columns[TimeStart]"
+                      name="TimeStart"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Import data into TimeStartSt\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import data into TimeStartSt\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import data into TimeStartSt\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import data into TimeStartSt\Derived Column.Inputs[Derived Column Input].Columns[Trip Start Timestamp]"
+                      cachedDataType="date"
+                      cachedName="Trip Start Timestamp"
+                      lineageId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import data into TimeStartSt\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[Day]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[Day]"
+                      name="Day"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DAY](#{Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DAY([Trip Start Timestamp])</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[Month]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[Month]"
+                      name="Month"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[MONTH](#{Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">MONTH([Trip Start Timestamp])</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[DayOfTheWeek]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[DayOfTheWeek]"
+                      name="DayOfTheWeek"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DATEPART]("wk",#{Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DATEPART("wk",[Trip Start Timestamp])</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">[Trip Start Timestamp]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import data into TimeStartSt\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import data into TimeStartSt\Source file - TimeStart"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source file - TimeStart"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import data into TimeStartSt\Source file - TimeStart.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Source file Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Source file Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Trip Start Timestamp]"
+                      lineageId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]"
+                      name="Trip Start Timestamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Trip ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Taxi ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Taxi ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Trip Start Timestamp]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip Start Timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Trip End Timestamp]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip End Timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Trip Seconds]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip Seconds" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Trip Miles]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip Miles" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Pickup Census Tract]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Census Tract" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Dropoff Census Tract]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Census Tract" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Pickup Community Area]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Community Area" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Dropoff Community Area]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Community Area" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Fare]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Fare" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Tips]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Tips" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Tolls]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Tolls" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Extras]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Extras" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Trip Total]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip Total" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Payment Type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Payment Type" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Company]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Company" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Pickup Centroid Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Centroid Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Pickup Centroid Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Centroid Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Pickup Centroid Location]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Centroid Location" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Dropoff Centroid Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Centroid Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Dropoff Centroid Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Centroid Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].ExternalColumns[Dropoff Centroid  Location]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Centroid  Location" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import data into TimeStartSt\Star schema database"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Star schema database"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."TimeStart"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import data into TimeStartSt\Star schema database.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost\SQLEXPRESS.IDH1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost\SQLEXPRESS.IDH1]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Day]"
+                      cachedDataType="i4"
+                      cachedName="Day"
+                      externalMetadataColumnId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Day]"
+                      lineageId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[Day]" />
+                    <inputColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Month]"
+                      cachedDataType="i4"
+                      cachedName="Month"
+                      externalMetadataColumnId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Month]"
+                      lineageId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[Month]" />
+                    <inputColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].Columns[DayOfTheWeek]"
+                      cachedDataType="i4"
+                      cachedName="DayOfTheWeek"
+                      externalMetadataColumnId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[DayOfTheWeek]"
+                      lineageId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[DayOfTheWeek]" />
+                    <inputColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].Columns[TimeStart]"
+                      cachedDataType="dbTime"
+                      cachedName="TimeStart"
+                      externalMetadataColumnId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Time]"
+                      lineageId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output].Columns[TimeStart]" />
+                    <inputColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Date]"
+                      cachedDataType="date"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[IdTimeStart]"
+                      dataType="i4"
+                      name="IdTimeStart" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Day]"
+                      dataType="i4"
+                      name="Day" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Month]"
+                      dataType="i4"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[DayOfTheWeek]"
+                      dataType="i4"
+                      name="DayOfTheWeek" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Time]"
+                      dataType="dbTime2"
+                      name="Time" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import data into TimeStartSt\Star schema database.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import data into TimeStartSt\Star schema database.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import data into TimeStartSt\Star schema database.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import data into TimeStartSt.Paths[Data Conversion Output]"
+              endId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Import data into TimeStartSt.Paths[Derived Column Output]"
+              endId="Package\Import data into TimeStartSt\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import data into TimeStartSt.Paths[Flat File Source Output]"
+              endId="Package\Import data into TimeStartSt\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{9C707542-73AA-4578-866E-105ED3EF8805}"
+      DTS:From="Package\clean table TimeStart"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import data into TimeStartSt" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="183,42"
+          Id="Package\clean table TimeStart"
+          TopLeft="437,95" />
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Import data into TimeStartSt"
+          TopLeft="413,200" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="524.75,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import data into TimeStartSt">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Import data into TimeStartSt\Derived Column"
+          TopLeft="210,147" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Import data into TimeStartSt\Star schema database"
+          TopLeft="193,348" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Import data into TimeStartSt\Source file - TimeStart"
+          TopLeft="198,47" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Import data into TimeStartSt\Data Conversion"
+          TopLeft="206,242" />
+        <EdgeLayout
+          Id="Package\Import data into TimeStartSt.Paths[Flat File Source Output]"
+          TopLeft="290.5,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data into TimeStartSt.Paths[Derived Column Output]"
+          TopLeft="287.75,189">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data into TimeStartSt.Paths[Data Conversion Output]"
+          TopLeft="287,284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64"
+              Start="0,0"
+              End="0,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import data into TimeStartSt\Star schema database">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
