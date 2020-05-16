@@ -7,12 +7,21 @@
   DTS:CreatorName="DESKTOP-MJKQMGF\Ihor Debelyi"
   DTS:DTSID="{2FFADE52-3A68-4ED3-B527-F28524451916}"
   DTS:ExecutableType="Microsoft.Package"
+<<<<<<< HEAD
+  DTS:LastModifiedProductVersion="15.0.2000.94"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{8891CCBE-827E-4F2D-A141-C0E259DE752E}">
+=======
   DTS:LastModifiedProductVersion="15.0.2000.93"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:VersionBuild="6"
   DTS:VersionGUID="{1B3CF36A-9805-41CD-8350-C253635548BD}">
+>>>>>>> b2e6576ecbee8297f0a69bf3823d96035b1c7590
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -938,6 +947,15 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+<<<<<<< HEAD
+          Size="195,42"
+          Id="Package\Clean table CompanySt"
+          TopLeft="212,59" />
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Import data into CompanySt"
+          TopLeft="197,168" />
+=======
           Size="216,42"
           Id="Package\Import data into CompanySt"
           TopLeft="197,168" />
@@ -945,6 +963,7 @@
           Size="195,42"
           Id="Package\Clean table CompanySt"
           TopLeft="212,59" />
+>>>>>>> b2e6576ecbee8297f0a69bf3823d96035b1c7590
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="307.25,101">
@@ -976,10 +995,39 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+<<<<<<< HEAD
+          Size="155,42"
+          Id="Package\Import data into CompanySt\SavingErrorLog"
+          TopLeft="647,140" />
+        <NodeLayout
+=======
+>>>>>>> b2e6576ecbee8297f0a69bf3823d96035b1c7590
           Size="210,42"
           Id="Package\Import data into CompanySt\driver data csv - source file"
           TopLeft="255,144" />
         <NodeLayout
+<<<<<<< HEAD
+          Size="263,42"
+          Id="Package\Import data into CompanySt\Sort and remove duplicate companies"
+          TopLeft="231,251" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Import data into CompanySt\Data Conversion"
+          TopLeft="289,340" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Import data into CompanySt\target star schema database"
+          TopLeft="250,439" />
+        <EdgeLayout
+          Id="Package\Import data into CompanySt.Paths[Data Conversion Output]"
+          TopLeft="369.5,382">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.5,57"
+              Start="0,0"
+              End="-10.5,49.5">
+=======
           Size="155,42"
           Id="Package\Import data into CompanySt\SavingErrorLog"
           TopLeft="647,140" />
@@ -992,16 +1040,47 @@
               EndConnector="182,0"
               Start="0,0"
               End="174.5,0">
+>>>>>>> b2e6576ecbee8297f0a69bf3823d96035b1c7590
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
+<<<<<<< HEAD
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="-4,28.5" />
+                  <mssgle:LineSegment
+                    End="-6.5,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.5,28.5"
+                    Point2="-10.5,28.5"
+                    Point3="-10.5,32.5" />
+                  <mssgle:LineSegment
+                    End="-10.5,49.5" />
+=======
                     End="174.5,0" />
+>>>>>>> b2e6576ecbee8297f0a69bf3823d96035b1c7590
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+<<<<<<< HEAD
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data into CompanySt.Paths[Sort Output]"
+          TopLeft="366,293">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+=======
             <mssgm:EdgeLabel
               BoundingBox="23.62361328125,5,127.2527734375,11.609375"
               RelativePosition="Any" />
@@ -1020,11 +1099,16 @@
               EndConnector="0,65"
               Start="0,0"
               End="0,57.5">
+>>>>>>> b2e6576ecbee8297f0a69bf3823d96035b1c7590
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
+<<<<<<< HEAD
+                    End="0,39.5" />
+=======
                     End="0,57.5" />
+>>>>>>> b2e6576ecbee8297f0a69bf3823d96035b1c7590
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1033,6 +1117,17 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+<<<<<<< HEAD
+        <EdgeLayout
+          Id="Package\Import data into CompanySt.Paths[Flat File Source Output]"
+          TopLeft="361.25,186">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+=======
         <NodeLayout
           Size="161,42"
           Id="Package\Import data into CompanySt\Data Conversion"
@@ -1046,11 +1141,16 @@
               EndConnector="0,47"
               Start="0,0"
               End="0,39.5">
+>>>>>>> b2e6576ecbee8297f0a69bf3823d96035b1c7590
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
+<<<<<<< HEAD
+                    End="0,57.5" />
+=======
                     End="0,39.5" />
+>>>>>>> b2e6576ecbee8297f0a69bf3823d96035b1c7590
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1059,6 +1159,17 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+<<<<<<< HEAD
+        <EdgeLayout
+          Id="Package\Import data into CompanySt.Paths[Flat File Source Error Output]"
+          TopLeft="465,163">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="182,0"
+              Start="0,0"
+              End="174.5,0">
+=======
         <NodeLayout
           Size="218,42"
           Id="Package\Import data into CompanySt\target star schema database"
@@ -1072,10 +1183,14 @@
               EndConnector="-10.5,57"
               Start="0,0"
               End="-10.5,49.5">
+>>>>>>> b2e6576ecbee8297f0a69bf3823d96035b1c7590
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
+<<<<<<< HEAD
+                    End="174.5,0" />
+=======
                     End="0,24.5" />
                   <mssgle:CubicBezierSegment
                     Point1="0,24.5"
@@ -1089,12 +1204,19 @@
                     Point3="-10.5,32.5" />
                   <mssgle:LineSegment
                     End="-10.5,49.5" />
+>>>>>>> b2e6576ecbee8297f0a69bf3823d96035b1c7590
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+<<<<<<< HEAD
+            <mssgm:EdgeLabel
+              BoundingBox="23.62361328125,5,127.2527734375,11.609375"
+              RelativePosition="Any" />
+=======
             <EdgeLabelCollection />
+>>>>>>> b2e6576ecbee8297f0a69bf3823d96035b1c7590
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
