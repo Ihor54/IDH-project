@@ -1,0 +1,2591 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/1/2020 6:05:28 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-MJKQMGF"
+  DTS:CreatorName="DESKTOP-MJKQMGF\Ihor Debelyi"
+  DTS:DTSID="{73CCCA90-3CCC-4C30-B9AB-2789E1B58B2A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{B4423CD2-A4D6-4EF8-B2EF-10B0E5CF10F0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Community areas Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{BA71EEF8-890A-44F2-B61E-48A0F8D82943}"
+      DTS:ObjectName="Community areas Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\PJATK studies\Masters\IDH\IDH project\chicago-community-areas.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Number"
+              DTS:DTSID="{7C37ACC7-0989-42FF-A5C0-8C9A862CD8BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{6F4EB81B-B10B-4BA6-8A07-69B1A5F5BDBE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DataConvertionErrorLog]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C010F3F7-877F-43AA-AF93-6350287DDA41}"
+      DTS:ObjectName="DataConvertionErrorLog">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="E:\PJATK studies\Masters\IDH\IDH project\IDH-project\PickupAreaDataConvertionErrorLog.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Longitude"
+              DTS:DTSID="{8E9EF3EA-5C4A-44C8-9239-8B6DA80B6109}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Latitude"
+              DTS:DTSID="{353FD39A-3EF0-43C6-881F-0B82EE4809C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Community Area"
+              DTS:DTSID="{5C50E941-28BA-4111-8A91-7F73785BF8EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Community Area Name"
+              DTS:DTSID="{04DB0BD9-AA03-4010-8C7A-6775115EA678}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{446D4EB7-C90D-4A74-BF91-EBA8056F3E0A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{C60BD2AF-5E37-491A-876F-BEFAFF73D675}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ErrorLogConManager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{058B650B-3B66-402A-B7AD-C335B47B7C58}"
+      DTS:ObjectName="ErrorLogConManager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\PJATK studies\Masters\IDH\IDH project\IDH-project\PickupLocationErrorLog.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Flat File Source Error Output Column"
+              DTS:DTSID="{7DB97A3F-119B-47BC-8C71-1218580B6E26}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{0D7C055C-7C04-4199-BEAF-35B10F175C47}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{F3339B14-D56D-431C-AEB2-5AF44C8D4B3B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost\SQLEXPRESS.IDH1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{84C5EA8C-8AA6-46AA-B0DF-7D89402CECBF}"
+      DTS:ObjectName="localhost\SQLEXPRESS.IDH1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=IDH;Integrated Security=True;Application Name=SSIS-Package1-{84C5EA8C-8AA6-46AA-B0DF-7D89402CECBF}localhost\SQLEXPRESS.IDH1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[test_csv_manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{134330D1-D87E-4FEF-95A5-A14403007B5E}"
+      DTS:ObjectName="test_csv_manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="E:\PJATK studies\Masters\IDH\IDH project\taxi_drivers_test.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip ID"
+              DTS:DTSID="{CD6DF171-E52A-4E1D-8507-3AF7783537F1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Taxi ID"
+              DTS:DTSID="{A1A63E3D-65C8-4111-9D33-91B80BCC6CCA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Start Timestamp"
+              DTS:DTSID="{D8043467-6247-4F62-A2EF-DFC0DE76A675}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip End Timestamp"
+              DTS:DTSID="{1B6CE2F4-9027-4874-8363-CF2185FFE9AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Seconds"
+              DTS:DTSID="{EE8B58B4-E6E8-4C5C-91A7-01B7DB571993}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Miles"
+              DTS:DTSID="{499241D0-8645-4F13-B9FC-B3F99250ED90}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Census Tract"
+              DTS:DTSID="{E6C54BCC-3BFC-4DD4-B396-F8182D2AE5BC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Census Tract"
+              DTS:DTSID="{2861471B-8AED-476F-9A48-9CF920DFE0D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Community Area"
+              DTS:DTSID="{9D2767E8-14A4-4688-915F-63696D73A5D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Community Area"
+              DTS:DTSID="{53FB4378-C4BF-41D8-8B1B-A7518F8DE33E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fare"
+              DTS:DTSID="{EDFAEAD9-7F24-4460-9BA5-84DD4F7E3F2E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tips"
+              DTS:DTSID="{E3CEA17E-116D-4381-86C1-C8CF6B39E49E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tolls"
+              DTS:DTSID="{7F6C37E6-6287-4A49-A06A-146BCDA61084}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Extras"
+              DTS:DTSID="{3A5305EC-A7FB-42D6-B792-19434E781CAA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Total"
+              DTS:DTSID="{2921CCEA-639F-45C3-BB9B-BE8A3B865704}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Payment Type"
+              DTS:DTSID="{BFAD2921-49E9-48EF-9FCF-2489997CB360}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Company"
+              DTS:DTSID="{E10C1D28-2AB6-412F-93F1-2F6B1F91B627}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Latitude"
+              DTS:DTSID="{ADE2F075-56D0-46E0-84D1-9651B6E26C55}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Longitude"
+              DTS:DTSID="{D16AF33A-A3C7-4825-A42C-A8E96BF98757}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Location"
+              DTS:DTSID="{AAF1E527-5C2B-4C53-9848-01C7FC3824F2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid Latitude"
+              DTS:DTSID="{D23FDDF8-A4C4-489D-926D-ED52DFC56E5F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid Longitude"
+              DTS:DTSID="{474D88B0-8878-42F2-84A5-7342F3153D3D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid  Location"
+              DTS:DTSID="{1D4DE725-B90B-478E-A770-FA8686F33515}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{77663FE1-607C-4ABD-A05B-A16266173AE1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CleanPickupLocation">
+      <DTS:VariableValue
+        DTS:DataType="8">delete from PickupLocation;</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\clean table PickupLocation"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5703E0E5-F3D0-4314-8B5E-50FE03C865AB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="clean table PickupLocation"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{84C5EA8C-8AA6-46AA-B0DF-7D89402CECBF}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::CleanPickupLocation" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import Data into PickupLocationSt"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{AAFB579C-D3C3-438B-9307-009DDC3C2C4B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Data into PickupLocationSt"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Data into PickupLocationSt\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Conditional Split.Inputs[Conditional Split Input].Columns[Pickup Community Area]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Community Area"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Community Area]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Conditional Split.Outputs[No community area]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="No community area"
+                  synchronousInputId="Package\Import Data into PickupLocationSt\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Community Area]} == ""</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">[Pickup Community Area] == ""</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Conditional Split.Outputs[Default flow (with community area)]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Default flow (with community area)"
+                  synchronousInputId="Package\Import Data into PickupLocationSt\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Import Data into PickupLocationSt\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Data into PickupLocationSt\Convert area number to int"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convert area number to int"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Convert area number to int.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Convert area number to int.Inputs[Data Conversion Input].Columns[Number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Number"
+                      lineageId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Output].Columns[Number]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Convert area number to int.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Import Data into PickupLocationSt\Convert area number to int.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Convert area number to int.Outputs[Data Conversion Output].Columns[Copy of Number]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert area number to int.Outputs[Data Conversion Output].Columns[Copy of Number]"
+                      name="Copy of Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Output].Columns[Number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Convert area number to int.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Import Data into PickupLocationSt\Convert area number to int.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Convert area number to int.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert area number to int.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Convert area number to int.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert area number to int.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Data into PickupLocationSt\Convert community area number to int"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convert community area number to int"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Convert community area number to int.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Convert community area number to int.Inputs[Data Conversion Input].Columns[Pickup Community Area]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Community Area"
+                      lineageId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Community Area]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Import Data into PickupLocationSt\Convert community area number to int.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Output].Columns[Copy of Pickup Community Area]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Output].Columns[Copy of Pickup Community Area]"
+                      name="Copy of Pickup Community Area"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Community Area]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Import Data into PickupLocationSt\Convert community area number to int.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convert longitude and latitude into decimal"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Inputs[Data Conversion Input].Columns[Pickup Centroid Longitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Centroid Longitude"
+                      lineageId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Centroid Longitude]" />
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Inputs[Data Conversion Input].Columns[Pickup Centroid Latitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Centroid Latitude"
+                      lineageId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Centroid Latitude]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output].Columns[Copy of Pickup Centroid Longitude]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output].Columns[Copy of Pickup Centroid Longitude]"
+                      name="Copy of Pickup Centroid Longitude"
+                      precision="12"
+                      scale="9"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Centroid Longitude]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output].Columns[Copy of Pickup Centroid Latitude]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output].Columns[Copy of Pickup Centroid Latitude]"
+                      name="Copy of Pickup Centroid Latitude"
+                      precision="12"
+                      scale="9"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Centroid Latitude]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Data into PickupLocationSt\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Derived Column.Inputs[Derived Column Input].Columns[Pickup Community Area]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Community Area"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Community Area]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Derived Column.Inputs[Derived Column Input].Columns[Pickup Centroid Longitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Centroid Longitude"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Centroid Longitude]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Derived Column.Inputs[Derived Column Input].Columns[Pickup Centroid Latitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Centroid Latitude"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Centroid Latitude]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Data into PickupLocationSt\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Data into PickupLocationSt\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Data into PickupLocationSt\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Merge Join.Inputs[Merge Join Left Input].Columns[ Pickup Community Area]"
+                      cachedDataType="i4"
+                      cachedName=" Pickup Community Area"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Import Data into PickupLocationSt\Sort by community area number.Outputs[Sort Output].Columns[ Pickup Community Area]" />
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Merge Join.Inputs[Merge Join Left Input].Columns[Pickup Centroid Longitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Centroid Longitude"
+                      lineageId="Package\Import Data into PickupLocationSt\Sort by community area number.Outputs[Sort Output].Columns[Pickup Centroid Longitude]" />
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Merge Join.Inputs[Merge Join Left Input].Columns[Pickup Centroid Latitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Centroid Latitude"
+                      lineageId="Package\Import Data into PickupLocationSt\Sort by community area number.Outputs[Sort Output].Columns[Pickup Centroid Latitude]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Merge Join.Inputs[Merge Join Right Input].Columns[Copy of Number]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Number"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Import Data into PickupLocationSt\Sort.Outputs[Sort Output].Columns[Copy of Number]" />
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Merge Join.Inputs[Merge Join Right Input].Columns[Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Import Data into PickupLocationSt\Sort.Outputs[Sort Output].Columns[Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Centroid Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Centroid Longitude]"
+                      name="Pickup Centroid Longitude">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Import Data into PickupLocationSt\Merge Join.Inputs[Merge Join Left Input].Columns[Pickup Centroid Longitude]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Centroid Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Centroid Latitude]"
+                      name="Pickup Centroid Latitude">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Import Data into PickupLocationSt\Merge Join.Inputs[Merge Join Left Input].Columns[Pickup Centroid Latitude]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Community Area]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Community Area]"
+                      name="Pickup Community Area"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Import Data into PickupLocationSt\Merge Join.Inputs[Merge Join Left Input].Columns[ Pickup Community Area]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Community Area Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Community Area Name]"
+                      name="Pickup Community Area Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Import Data into PickupLocationSt\Merge Join.Inputs[Merge Join Right Input].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Data into PickupLocationSt\Save data into ErrorLog"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Save data into ErrorLog"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Data into PickupLocationSt\Save data into ErrorLog.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ErrorLogConManager]"
+                  connectionManagerRefId="Package.ConnectionManagers[ErrorLogConManager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Save data into ErrorLog.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Save data into ErrorLog.Inputs[Flat File Destination Input].Columns[Flat File Source Error Output Column]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Flat File Source Error Output Column"
+                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Save data into ErrorLog.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]" />
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Save data into ErrorLog.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Save data into ErrorLog.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Save data into ErrorLog.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Save data into ErrorLog.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Save data into ErrorLog.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Flat File Source Error Output Column" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Save data into ErrorLog.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Save data into ErrorLog.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Import Data into PickupLocationSt\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Sort.Inputs[Sort Input].Columns[Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Output].Columns[Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Sort.Inputs[Sort Input].Columns[Copy of Number]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Number"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert area number to int.Outputs[Data Conversion Output].Columns[Copy of Number]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Sort.Outputs[Sort Output].Columns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Sort.Outputs[Sort Output].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Output].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Sort.Outputs[Sort Output].Columns[Copy of Number]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Sort.Outputs[Sort Output].Columns[Copy of Number]"
+                      name="Copy of Number"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Data into PickupLocationSt\Convert area number to int.Outputs[Data Conversion Output].Columns[Copy of Number]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Data into PickupLocationSt\Sort by community area number"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort by community area number"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Sort by community area number.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Sort by community area number.Inputs[Sort Input].Columns[Pickup Centroid Longitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Centroid Longitude"
+                      lineageId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Longitude]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Sort by community area number.Inputs[Sort Input].Columns[Pickup Centroid Latitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Centroid Latitude"
+                      lineageId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Latitude]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Sort by community area number.Inputs[Sort Input].Columns[Copy of Pickup Community Area]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Pickup Community Area"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Output].Columns[Copy of Pickup Community Area]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Sort by community area number.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Sort by community area number.Outputs[Sort Output].Columns[Pickup Centroid Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Sort by community area number.Outputs[Sort Output].Columns[Pickup Centroid Longitude]"
+                      name="Pickup Centroid Longitude">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Longitude]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Sort by community area number.Outputs[Sort Output].Columns[Pickup Centroid Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Sort by community area number.Outputs[Sort Output].Columns[Pickup Centroid Latitude]"
+                      name="Pickup Centroid Latitude">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Latitude]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Sort by community area number.Outputs[Sort Output].Columns[ Pickup Community Area]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Sort by community area number.Outputs[Sort Output].Columns[ Pickup Community Area]"
+                      name=" Pickup Community Area"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Output].Columns[Copy of Pickup Community Area]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Data into PickupLocationSt\Source CommunityArea names"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source CommunityArea names"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Community areas Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Community areas Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Output].Columns[Number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Output].ExternalColumns[Number]"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Output].Columns[Number]"
+                      name="Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Output].Columns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Output].ExternalColumns[Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Number" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Name" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source file - PickupLocation"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[test_csv_manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[test_csv_manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Community Area]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Pickup Community Area]"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Community Area]"
+                      name="Pickup Community Area"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Centroid Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Pickup Centroid Longitude]"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Centroid Longitude]"
+                      name="Pickup Centroid Longitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Centroid Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Pickup Centroid Latitude]"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Centroid Latitude]"
+                      name="Pickup Centroid Latitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Taxi ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Taxi ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Trip Start Timestamp]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip Start Timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Trip End Timestamp]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip End Timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Trip Seconds]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip Seconds" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Trip Miles]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip Miles" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Pickup Census Tract]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Census Tract" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Dropoff Census Tract]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Census Tract" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Pickup Community Area]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Community Area" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Dropoff Community Area]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Community Area" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Fare]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Fare" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Tips]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Tips" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Tolls]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Tolls" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Extras]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Extras" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Trip Total]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip Total" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Payment Type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Payment Type" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Company]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Company" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Pickup Centroid Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Centroid Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Pickup Centroid Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Centroid Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Pickup Centroid Location]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup Centroid Location" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Dropoff Centroid Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Centroid Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Dropoff Centroid Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Centroid Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Dropoff Centroid  Location]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dropoff Centroid  Location" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].ExternalColumns[Trip ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Trip ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Data into PickupLocationSt\Star schema database"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Star schema database"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."PickupLocation"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Data into PickupLocationSt\Star schema database.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost\SQLEXPRESS.IDH1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost\SQLEXPRESS.IDH1]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Pickup Community Area Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Community Area Name"
+                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[PickupCommunityAreaName]"
+                      lineageId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Community Area Name]" />
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Pickup Community Area]"
+                      cachedDataType="i4"
+                      cachedName="Pickup Community Area"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[PickupCommunityArea]"
+                      lineageId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Community Area]" />
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Copy of Pickup Centroid Longitude]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Pickup Centroid Longitude"
+                      cachedPrecision="12"
+                      cachedScale="9"
+                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[PickupLongtitude]"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output].Columns[Copy of Pickup Centroid Longitude]" />
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Copy of Pickup Centroid Latitude]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Pickup Centroid Latitude"
+                      cachedPrecision="12"
+                      cachedScale="9"
+                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[PickupLatitude]"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output].Columns[Copy of Pickup Centroid Latitude]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[IdPickupLocation]"
+                      dataType="i4"
+                      name="IdPickupLocation" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[PickupCommunityArea]"
+                      dataType="i4"
+                      name="PickupCommunityArea" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[PickupCommunityAreaName]"
+                      dataType="wstr"
+                      length="200"
+                      name="PickupCommunityAreaName" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[PickupLatitude]"
+                      dataType="numeric"
+                      name="PickupLatitude"
+                      precision="12"
+                      scale="9" />
+                    <externalMetadataColumn
+                      refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[PickupLongtitude]"
+                      dataType="numeric"
+                      name="PickupLongtitude"
+                      precision="12"
+                      scale="9" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Star schema database.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Star schema database.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Star schema database.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Star schema database.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Star schema database.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Data into PickupLocationSt\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Union All.Inputs[Union All Input 2].Columns[Pickup Community Area]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Community Area"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Community Area]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Community Area]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Union All.Inputs[Union All Input 2].Columns[Pickup Centroid Longitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Centroid Longitude"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Centroid Longitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Longitude]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Union All.Inputs[Union All Input 2].Columns[Pickup Centroid Latitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Centroid Latitude"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Centroid Latitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Latitude]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Union All.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Union All.Inputs[Union All Input 3].Columns[Pickup Community Area]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Community Area"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Community Area]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Community Area]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Union All.Inputs[Union All Input 3].Columns[Pickup Centroid Longitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Centroid Longitude"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Centroid Longitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Longitude]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Union All.Inputs[Union All Input 3].Columns[Pickup Centroid Latitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Centroid Latitude"
+                      lineageId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output].Columns[Pickup Centroid Latitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Latitude]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Union All.Inputs[Union All Input 1]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Community Area]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Community Area]"
+                      name="Pickup Community Area" />
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Longitude]"
+                      name="Pickup Centroid Longitude" />
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Latitude]"
+                      name="Pickup Centroid Latitude" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output]"
+              endId="Package\Import Data into PickupLocationSt\Sort by community area number.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output1]"
+              endId="Package\Import Data into PickupLocationSt\Sort.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\Import Data into PickupLocationSt\Convert area number to int.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output2]"
+              endId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[Default flow (with community area)]"
+              endId="Package\Import Data into PickupLocationSt\Union All.Inputs[Union All Input 3]"
+              name="Default flow (with community area)"
+              startId="Package\Import Data into PickupLocationSt\Conditional Split.Outputs[Default flow (with community area)]" />
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[Derived Column Output]"
+              endId="Package\Import Data into PickupLocationSt\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Import Data into PickupLocationSt\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[Flat File Source Error Output]"
+              endId="Package\Import Data into PickupLocationSt\Save data into ErrorLog.Inputs[Flat File Destination Input]"
+              name="Flat File Source Error Output"
+              startId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Error Output]" />
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[Flat File Source Output]"
+              endId="Package\Import Data into PickupLocationSt\Conditional Split.Inputs[Conditional Split Input]"
+              name="Flat File Source Output"
+              startId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[Flat File Source Output1]"
+              endId="Package\Import Data into PickupLocationSt\Convert area number to int.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Import Data into PickupLocationSt\Source CommunityArea names.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[Merge Join Output]"
+              endId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Inputs[Data Conversion Input]"
+              name="Merge Join Output"
+              startId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[No community area]"
+              endId="Package\Import Data into PickupLocationSt\Derived Column.Inputs[Derived Column Input]"
+              name="No community area"
+              startId="Package\Import Data into PickupLocationSt\Conditional Split.Outputs[No community area]" />
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[Sort Output]"
+              endId="Package\Import Data into PickupLocationSt\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Import Data into PickupLocationSt\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[Sort Output1]"
+              endId="Package\Import Data into PickupLocationSt\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Import Data into PickupLocationSt\Sort by community area number.Outputs[Sort Output]" />
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[Union All Output 1]"
+              endId="Package\Import Data into PickupLocationSt\Convert community area number to int.Inputs[Data Conversion Input]"
+              name="Union All Output 1"
+              startId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6D4C35D4-2254-4080-AA39-837C19648D29}"
+      DTS:From="Package\clean table PickupLocation"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import Data into PickupLocationSt" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="210,42"
+          Id="Package\clean table PickupLocation"
+          TopLeft="250,59" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\Import Data into PickupLocationSt"
+          TopLeft="231,200" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="354.25,101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,99"
+              Start="0,0"
+              End="0,91.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,91.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import Data into PickupLocationSt">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Import Data into PickupLocationSt\Save data into ErrorLog"
+          TopLeft="693.142857142857,160.571428571429" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Import Data into PickupLocationSt\Source file - PickupLocation"
+          TopLeft="341,162" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Import Data into PickupLocationSt\Source CommunityArea names"
+          TopLeft="702.142857142857,307.714285714286" />
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Flat File Source Error Output]"
+          TopLeft="556,182.285714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137.142857142857,0"
+              Start="0,0"
+              End="129.642857142857,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="129.642857142857,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="1.19504185267856,5,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Import Data into PickupLocationSt\Conditional Split"
+          TopLeft="365,263" />
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Flat File Source Output]"
+          TopLeft="446.5,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Import Data into PickupLocationSt\Derived Column"
+          TopLeft="265.795454545455,348.022727272727" />
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[No community area]"
+          TopLeft="419.333333333333,305">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-74.5378787878788,43.0227272727273"
+              Start="0,0"
+              End="-74.5378787878788,35.5227272727273">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.4662628778445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.4662628778445"
+                    Point2="0,17.4662628778445"
+                    Point3="-4,17.4662628778445" />
+                  <mssgle:LineSegment
+                    End="-70.5378787878788,17.4662628778445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-70.5378787878788,17.4662628778445"
+                    Point2="-74.5378787878788,17.4662628778445"
+                    Point3="-74.5378787878788,21.4662628778445" />
+                  <mssgle:LineSegment
+                    End="-74.5378787878788,35.5227272727273" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-80.7522987689394,22.4662628778445,86.96671875,11.3310546875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Import Data into PickupLocationSt\Union All"
+          TopLeft="410,430" />
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Derived Column Output]"
+          TopLeft="344.795454545455,390.022727272727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.537878787879,39.9772727272727"
+              Start="0,0"
+              End="107.537878787879,32.4772727272727">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.6783525463301" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.6783525463301"
+                    Point2="0,23.6783525463301"
+                    Point3="4,23.6783525463301" />
+                  <mssgle:LineSegment
+                    End="103.537878787879,23.6783525463301" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.537878787879,23.6783525463301"
+                    Point2="107.537878787879,23.6783525463301"
+                    Point3="107.537878787879,27.6783525463301" />
+                  <mssgle:LineSegment
+                    End="107.537878787879,32.4772727272727" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Default flow (with community area)]"
+          TopLeft="505.166666666667,305">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,125"
+              Start="0,0"
+              End="0,117.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,117.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-78.75673828125,52.9208984375,157.5134765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="266,42"
+          Id="Package\Import Data into PickupLocationSt\Convert community area number to int"
+          TopLeft="336.363636363636,513.636363636364" />
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Union All Output 1]"
+          TopLeft="470.431818181818,472">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.6363636363636"
+              Start="0,0"
+              End="0,34.1363636363636">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.1363636363636" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="235,42"
+          Id="Package\Import Data into PickupLocationSt\Sort by community area number"
+          TopLeft="355.454545454546,597.272727272727" />
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output]"
+          TopLeft="471.159090909091,555.636363636364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.6363636363636"
+              Start="0,0"
+              End="0,34.1363636363636">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.1363636363636" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Import Data into PickupLocationSt\Convert area number to int"
+          TopLeft="712.597402597402,412.987012987013" />
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Flat File Source Output1]"
+          TopLeft="817.62012987013,349.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.2727272727272"
+              Start="0,0"
+              End="0,55.7727272727272">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.7727272727272" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Import Data into PickupLocationSt\Merge Join"
+          TopLeft="755.454545454545,593.636363636364" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Import Data into PickupLocationSt\Sort"
+          TopLeft="773.506493506493,514.805194805195" />
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output1]"
+          TopLeft="820.051948051948,454.987012987013">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.8181818181819"
+              Start="0,0"
+              End="0,52.3181818181819">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.3181818181819" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Sort Output]"
+          TopLeft="822.480519480519,556.805194805195">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.8311688311687"
+              Start="0,0"
+              End="0,29.3311688311687">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.3311688311687" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Sort Output1]"
+          TopLeft="590.454545454546,616.454545454546">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="165,0"
+              Start="0,0"
+              End="157.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="157.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="287,42"
+          Id="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal"
+          TopLeft="690,675.714285714286" />
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Merge Join Output]"
+          TopLeft="821.954545454545,635.636363636364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.5454545454548,40.0779220779222"
+              Start="0,0"
+              End="11.5454545454548,32.5779220779222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.0389610389611" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.0389610389611"
+                    Point2="0,20.0389610389611"
+                    Point3="4,20.0389610389611" />
+                  <mssgle:LineSegment
+                    End="7.54545454545485,20.0389610389611" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.54545454545485,20.0389610389611"
+                    Point2="11.5454545454548,20.0389610389611"
+                    Point3="11.5454545454548,24.0389610389611" />
+                  <mssgle:LineSegment
+                    End="11.5454545454548,32.5779220779222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Import Data into PickupLocationSt\Star schema database"
+          TopLeft="740,762.857142857143" />
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output2]"
+          TopLeft="834,717.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.1428571428572"
+              Start="0,0"
+              End="0,37.6428571428572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.6428571428572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Data into PickupLocationSt\Star schema database">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
