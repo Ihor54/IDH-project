@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{8DAD439F-77BF-4529-9564-4B222876A0F7}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{E282961D-09C7-4A27-8F9B-749242D5F8A0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1068,6 +1068,175 @@
               </outputs>
             </component>
             <component
+              refId="Package\Import data into DropoffLocationSt\Remove duplicates"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Remove duplicates"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import data into DropoffLocationSt\Remove duplicates.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import data into DropoffLocationSt\Remove duplicates.Inputs[Sort Input].Columns[Dropoff Community Area]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Dropoff Community Area"
+                      lineageId="Package\Import data into DropoffLocationSt\Union All.Outputs[Union All Output 1].Columns[Dropoff Community Area]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import data into DropoffLocationSt\Remove duplicates.Inputs[Sort Input].Columns[Dropoff Centroid Latitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Dropoff Centroid Latitude"
+                      lineageId="Package\Import data into DropoffLocationSt\Union All.Outputs[Union All Output 1].Columns[Dropoff Centroid Latitude]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import data into DropoffLocationSt\Remove duplicates.Inputs[Sort Input].Columns[Dropoff Centroid Longitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Dropoff Centroid Longitude"
+                      lineageId="Package\Import data into DropoffLocationSt\Union All.Outputs[Union All Output 1].Columns[Dropoff Centroid Longitude]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import data into DropoffLocationSt\Remove duplicates.Inputs[Sort Input].Columns[Copy of Dropoff Community Area]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Dropoff Community Area"
+                      lineageId="Package\Import data into DropoffLocationSt\Convert community area number to int.Outputs[Data Conversion Output].Columns[Copy of Dropoff Community Area]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Dropoff Community Area]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Dropoff Community Area]"
+                      name="Dropoff Community Area">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import data into DropoffLocationSt\Union All.Outputs[Union All Output 1].Columns[Dropoff Community Area]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Dropoff Centroid Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Dropoff Centroid Latitude]"
+                      name="Dropoff Centroid Latitude"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import data into DropoffLocationSt\Union All.Outputs[Union All Output 1].Columns[Dropoff Centroid Latitude]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Dropoff Centroid Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Dropoff Centroid Longitude]"
+                      name="Dropoff Centroid Longitude"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import data into DropoffLocationSt\Union All.Outputs[Union All Output 1].Columns[Dropoff Centroid Longitude]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Copy of Dropoff Community Area]"
+                      dataType="i4"
+                      lineageId="Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Copy of Dropoff Community Area]"
+                      name="Copy of Dropoff Community Area"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import data into DropoffLocationSt\Convert community area number to int.Outputs[Data Conversion Output].Columns[Copy of Dropoff Community Area]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Import data into DropoffLocationSt\Save data convertion error log"
               componentClassID="Microsoft.FlatFileDestination"
               contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -1376,7 +1545,8 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Dropoff Centroid Latitude"
-                      lineageId="Package\Import data into DropoffLocationSt\Union All.Outputs[Union All Output 1].Columns[Dropoff Centroid Latitude]">
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Dropoff Centroid Latitude]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1394,7 +1564,8 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Dropoff Centroid Longitude"
-                      lineageId="Package\Import data into DropoffLocationSt\Union All.Outputs[Union All Output 1].Columns[Dropoff Centroid Longitude]">
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Dropoff Centroid Longitude]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1410,7 +1581,8 @@
                       refId="Package\Import data into DropoffLocationSt\Sort by Community area number.Inputs[Sort Input].Columns[Copy of Dropoff Community Area]"
                       cachedDataType="i4"
                       cachedName="Copy of Dropoff Community Area"
-                      lineageId="Package\Import data into DropoffLocationSt\Convert community area number to int.Outputs[Data Conversion Output].Columns[Copy of Dropoff Community Area]">
+                      cachedSortKeyPosition="3"
+                      lineageId="Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Copy of Dropoff Community Area]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1444,7 +1616,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Import data into DropoffLocationSt\Union All.Outputs[Union All Output 1].Columns[Dropoff Centroid Latitude]}</property>
+                          name="SortColumnId">#{Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Dropoff Centroid Latitude]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1459,7 +1631,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Import data into DropoffLocationSt\Union All.Outputs[Union All Output 1].Columns[Dropoff Centroid Longitude]}</property>
+                          name="SortColumnId">#{Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Dropoff Centroid Longitude]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1473,7 +1645,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Import data into DropoffLocationSt\Convert community area number to int.Outputs[Data Conversion Output].Columns[Copy of Dropoff Community Area]}</property>
+                          name="SortColumnId">#{Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Copy of Dropoff Community Area]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2173,14 +2345,14 @@
               startId="Package\Import data into DropoffLocationSt\Convert area number to int.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Import data into DropoffLocationSt.Paths[Data Conversion Output1]"
-              endId="Package\Import data into DropoffLocationSt\Sort by Community area number.Inputs[Sort Input]"
-              name="Data Conversion Output"
-              startId="Package\Import data into DropoffLocationSt\Convert community area number to int.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Import data into DropoffLocationSt.Paths[Data Conversion Output2]"
               endId="Package\Import data into DropoffLocationSt\Star schema database.Inputs[ADO NET Destination Input]"
               name="Data Conversion Output"
               startId="Package\Import data into DropoffLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Import data into DropoffLocationSt.Paths[Data Conversion Output2]"
+              endId="Package\Import data into DropoffLocationSt\Remove duplicates.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\Import data into DropoffLocationSt\Convert community area number to int.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Import data into DropoffLocationSt.Paths[Default flow (with community area)]"
               endId="Package\Import data into DropoffLocationSt\Union All.Inputs[Union All Input 2]"
@@ -2226,6 +2398,11 @@
               endId="Package\Import data into DropoffLocationSt\Merge Join.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Import data into DropoffLocationSt\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Import data into DropoffLocationSt.Paths[Sort Output2]"
+              endId="Package\Import data into DropoffLocationSt\Sort by Community area number.Inputs[Sort Input]"
+              name="Sort Output"
+              startId="Package\Import data into DropoffLocationSt\Remove duplicates.Outputs[Sort Output]" />
             <path
               refId="Package\Import data into DropoffLocationSt.Paths[Union All Output 1]"
               endId="Package\Import data into DropoffLocationSt\Convert community area number to int.Inputs[Data Conversion Input]"
@@ -2297,25 +2474,127 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="158,42"
-          Id="Package\Import data into DropoffLocationSt\Derived Column"
-          TopLeft="311,269" />
+          Size="232,42"
+          Id="Package\Import data into DropoffLocationSt\Source CommunityArea names"
+          TopLeft="808,314" />
+        <NodeLayout
+          Size="287,42"
+          Id="Package\Import data into DropoffLocationSt\Convert longitude and latitude into decimal"
+          TopLeft="768,675" />
+        <NodeLayout
+          Size="237,42"
+          Id="Package\Import data into DropoffLocationSt\Sort by Community area number"
+          TopLeft="429,566" />
         <NodeLayout
           Size="158,42"
           Id="Package\Import data into DropoffLocationSt\Saving ErrorLog"
           TopLeft="787,96" />
         <NodeLayout
-          Size="232,42"
-          Id="Package\Import data into DropoffLocationSt\Source CommunityArea names"
-          TopLeft="792,237" />
+          Size="266,42"
+          Id="Package\Import data into DropoffLocationSt\Convert community area number to int"
+          TopLeft="415,407" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Import data into DropoffLocationSt\Star schema database"
+          TopLeft="823,764" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Import data into DropoffLocationSt\Merge Join"
+          TopLeft="854,566" />
         <NodeLayout
           Size="225,42"
           Id="Package\Import data into DropoffLocationSt\Source data - DropoffLocation"
           TopLeft="421,97" />
         <NodeLayout
+          Size="209,42"
+          Id="Package\Import data into DropoffLocationSt\Convert area number to int"
+          TopLeft="815,391" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Import data into DropoffLocationSt\Derived Column"
+          TopLeft="311,269" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Import data into DropoffLocationSt\Save data convertion error log"
+          TopLeft="1193,672" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Import data into DropoffLocationSt\Union All"
+          TopLeft="483,317" />
+        <NodeLayout
           Size="159,42"
           Id="Package\Import data into DropoffLocationSt\Conditional Split"
           TopLeft="452,169" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Import data into DropoffLocationSt\Sort"
+          TopLeft="871,470" />
+        <EdgeLayout
+          Id="Package\Import data into DropoffLocationSt.Paths[Union All Output 1]"
+          TopLeft="546.25,359">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data into DropoffLocationSt.Paths[Sort Output1]"
+          TopLeft="920.5,512">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data into DropoffLocationSt.Paths[Sort Output]"
+          TopLeft="666,587">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="188,0"
+              Start="0,0"
+              End="180.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="180.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Import data into DropoffLocationSt.Paths[No community area]"
           TopLeft="506.333333333333,211">
@@ -2350,6 +2629,62 @@
             <mssgm:EdgeLabel
               BoundingBox="-101.650026041667,28.546699875467,86.96671875,11.3310546875"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data into DropoffLocationSt.Paths[Merge Join Output]"
+          TopLeft="920.5,608">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,67"
+              Start="0,0"
+              End="-9,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="-4,33.5" />
+                  <mssgle:LineSegment
+                    End="-5,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,33.5"
+                    Point2="-9,33.5"
+                    Point3="-9,37.5" />
+                  <mssgle:LineSegment
+                    End="-9,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data into DropoffLocationSt.Paths[Flat File Source Output1]"
+          TopLeft="921.75,356">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2398,10 +2733,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Import data into DropoffLocationSt\Union All"
-          TopLeft="483,317" />
         <EdgeLayout
           Id="Package\Import data into DropoffLocationSt.Paths[Derived Column Output]"
           TopLeft="469,290">
@@ -2454,36 +2785,20 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="226,42"
-          Id="Package\Import data into DropoffLocationSt\Save data convertion error log"
-          TopLeft="1189,582" />
-        <NodeLayout
-          Size="237,42"
-          Id="Package\Import data into DropoffLocationSt\Sort by Community area number"
-          TopLeft="430,491" />
-        <NodeLayout
-          Size="99,42"
-          Id="Package\Import data into DropoffLocationSt\Sort"
-          TopLeft="855,393" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Import data into DropoffLocationSt\Convert area number to int"
-          TopLeft="799,314" />
         <EdgeLayout
-          Id="Package\Import data into DropoffLocationSt.Paths[Flat File Source Output1]"
-          TopLeft="905.75,279">
+          Id="Package\Import data into DropoffLocationSt.Paths[Data Conversion Output1]"
+          TopLeft="914.5,717">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35"
+              EndConnector="0,47"
               Start="0,0"
-              End="0,27.5">
+              End="0,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.5" />
+                    End="0,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2494,7 +2809,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import data into DropoffLocationSt.Paths[Data Conversion Output]"
-          TopLeft="904,356">
+          TopLeft="920,433">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2514,131 +2829,9 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="266,42"
-          Id="Package\Import data into DropoffLocationSt\Convert community area number to int"
-          TopLeft="415,407" />
-        <EdgeLayout
-          Id="Package\Import data into DropoffLocationSt.Paths[Union All Output 1]"
-          TopLeft="546.25,359">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import data into DropoffLocationSt.Paths[Data Conversion Output1]"
-          TopLeft="548.25,449">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Import data into DropoffLocationSt\Merge Join"
-          TopLeft="838,489" />
-        <EdgeLayout
-          Id="Package\Import data into DropoffLocationSt.Paths[Sort Output]"
-          TopLeft="667,511">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="171,0"
-              Start="0,0"
-              End="163.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="163.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import data into DropoffLocationSt.Paths[Sort Output1]"
-          TopLeft="904.5,435">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,54"
-              Start="0,0"
-              End="0,46.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="287,42"
-          Id="Package\Import data into DropoffLocationSt\Convert longitude and latitude into decimal"
-          TopLeft="764,585" />
-        <EdgeLayout
-          Id="Package\Import data into DropoffLocationSt.Paths[Merge Join Output]"
-          TopLeft="906,531">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,54"
-              Start="0,0"
-              End="0,46.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Import data into DropoffLocationSt.Paths[Data Conversion Error Output]"
-          TopLeft="1051,604.5">
+          TopLeft="1055,694.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2661,23 +2854,45 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="189,42"
-          Id="Package\Import data into DropoffLocationSt\Star schema database"
-          TopLeft="819,674" />
+          Size="173,42"
+          Id="Package\Import data into DropoffLocationSt\Remove duplicates"
+          TopLeft="458,482" />
         <EdgeLayout
           Id="Package\Import data into DropoffLocationSt.Paths[Data Conversion Output2]"
-          TopLeft="910.5,627">
+          TopLeft="546.25,449">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47"
+              EndConnector="0,33"
               Start="0,0"
-              End="0,39.5">
+              End="0,25.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.5" />
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data into DropoffLocationSt.Paths[Sort Output2]"
+          TopLeft="546,524">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

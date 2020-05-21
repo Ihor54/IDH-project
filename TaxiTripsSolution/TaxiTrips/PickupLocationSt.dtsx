@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{B4423CD2-A4D6-4EF8-B2EF-10B0E5CF10F0}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{CAA213D1-062A-4322-94A9-556E3D7FA84E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1076,6 +1076,142 @@
               </outputs>
             </component>
             <component
+              refId="Package\Import Data into PickupLocationSt\Remove duplicates"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Remove duplicates"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Data into PickupLocationSt\Remove duplicates.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Remove duplicates.Inputs[Sort Input].Columns[Pickup Centroid Longitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Centroid Longitude"
+                      lineageId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Longitude]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Remove duplicates.Inputs[Sort Input].Columns[Pickup Centroid Latitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup Centroid Latitude"
+                      lineageId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Latitude]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Remove duplicates.Inputs[Sort Input].Columns[Copy of Pickup Community Area]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Pickup Community Area"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Output].Columns[Copy of Pickup Community Area]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Data into PickupLocationSt\Remove duplicates.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Pickup Centroid Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Pickup Centroid Longitude]"
+                      name="Pickup Centroid Longitude"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Longitude]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Pickup Centroid Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Data into PickupLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Pickup Centroid Latitude]"
+                      name="Pickup Centroid Latitude"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Latitude]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Data into PickupLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Copy of Pickup Community Area]"
+                      dataType="i4"
+                      lineageId="Package\Import Data into PickupLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Copy of Pickup Community Area]"
+                      name="Copy of Pickup Community Area"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Output].Columns[Copy of Pickup Community Area]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Import Data into PickupLocationSt\Save data into ErrorLog"
               componentClassID="Microsoft.FlatFileDestination"
               contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -1280,7 +1416,8 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Pickup Centroid Longitude"
-                      lineageId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Longitude]">
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Import Data into PickupLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Pickup Centroid Longitude]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1298,7 +1435,8 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Pickup Centroid Latitude"
-                      lineageId="Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Latitude]">
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\Import Data into PickupLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Pickup Centroid Latitude]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1314,7 +1452,8 @@
                       refId="Package\Import Data into PickupLocationSt\Sort by community area number.Inputs[Sort Input].Columns[Copy of Pickup Community Area]"
                       cachedDataType="i4"
                       cachedName="Copy of Pickup Community Area"
-                      lineageId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Output].Columns[Copy of Pickup Community Area]">
+                      cachedSortKeyPosition="3"
+                      lineageId="Package\Import Data into PickupLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Copy of Pickup Community Area]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1348,7 +1487,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Longitude]}</property>
+                          name="SortColumnId">#{Package\Import Data into PickupLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Pickup Centroid Longitude]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1363,7 +1502,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Import Data into PickupLocationSt\Union All.Outputs[Union All Output 1].Columns[Pickup Centroid Latitude]}</property>
+                          name="SortColumnId">#{Package\Import Data into PickupLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Pickup Centroid Latitude]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1377,7 +1516,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Output].Columns[Copy of Pickup Community Area]}</property>
+                          name="SortColumnId">#{Package\Import Data into PickupLocationSt\Remove duplicates.Outputs[Sort Output].Columns[Copy of Pickup Community Area]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2068,19 +2207,19 @@
           <paths>
             <path
               refId="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output]"
-              endId="Package\Import Data into PickupLocationSt\Sort by community area number.Inputs[Sort Input]"
-              name="Data Conversion Output"
-              startId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output1]"
               endId="Package\Import Data into PickupLocationSt\Sort.Inputs[Sort Input]"
               name="Data Conversion Output"
               startId="Package\Import Data into PickupLocationSt\Convert area number to int.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output2]"
+              refId="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output1]"
               endId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input]"
               name="Data Conversion Output"
               startId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output2]"
+              endId="Package\Import Data into PickupLocationSt\Remove duplicates.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Import Data into PickupLocationSt.Paths[Default flow (with community area)]"
               endId="Package\Import Data into PickupLocationSt\Union All.Inputs[Union All Input 3]"
@@ -2126,6 +2265,11 @@
               endId="Package\Import Data into PickupLocationSt\Merge Join.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Import Data into PickupLocationSt\Sort by community area number.Outputs[Sort Output]" />
+            <path
+              refId="Package\Import Data into PickupLocationSt.Paths[Sort Output2]"
+              endId="Package\Import Data into PickupLocationSt\Sort by community area number.Inputs[Sort Input]"
+              name="Sort Output"
+              startId="Package\Import Data into PickupLocationSt\Remove duplicates.Outputs[Sort Output]" />
             <path
               refId="Package\Import Data into PickupLocationSt.Paths[Union All Output 1]"
               endId="Package\Import Data into PickupLocationSt\Convert community area number to int.Inputs[Data Conversion Input]"
@@ -2197,17 +2341,225 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="287,42"
+          Id="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal"
+          TopLeft="677,733.714285714286" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Import Data into PickupLocationSt\Merge Join"
+          TopLeft="756.454545454545,644.636363636364" />
+        <NodeLayout
+          Size="266,42"
+          Id="Package\Import Data into PickupLocationSt\Convert community area number to int"
+          TopLeft="336.363636363636,513.636363636364" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Import Data into PickupLocationSt\Sort"
+          TopLeft="774.506493506493,565.805194805195" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Import Data into PickupLocationSt\Source CommunityArea names"
+          TopLeft="703.142857142857,358.714285714286" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\Import Data into PickupLocationSt\Sort by community area number"
+          TopLeft="354.454545454546,648.272727272727" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Import Data into PickupLocationSt\Convert area number to int"
+          TopLeft="713.597402597402,463.987012987013" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Import Data into PickupLocationSt\Derived Column"
+          TopLeft="265.795454545455,348.022727272727" />
+        <NodeLayout
           Size="195,42"
           Id="Package\Import Data into PickupLocationSt\Save data into ErrorLog"
           TopLeft="693.142857142857,160.571428571429" />
         <NodeLayout
+          Size="189,42"
+          Id="Package\Import Data into PickupLocationSt\Star schema database"
+          TopLeft="732,819.857142857143" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Import Data into PickupLocationSt\Conditional Split"
+          TopLeft="365,263" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Import Data into PickupLocationSt\Union All"
+          TopLeft="410,430" />
+        <NodeLayout
           Size="215,42"
           Id="Package\Import Data into PickupLocationSt\Source file - PickupLocation"
           TopLeft="341,162" />
-        <NodeLayout
-          Size="232,42"
-          Id="Package\Import Data into PickupLocationSt\Source CommunityArea names"
-          TopLeft="702.142857142857,307.714285714286" />
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Union All Output 1]"
+          TopLeft="470.431818181818,472">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.6363636363636"
+              Start="0,0"
+              End="0,34.1363636363636">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.1363636363636" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Sort Output1]"
+          TopLeft="589.454545454546,667.454545454546">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="166.999999999999,0"
+              Start="0,0"
+              End="159.499999999999,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="159.499999999999,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Sort Output]"
+          TopLeft="823.480519480519,607.805194805195">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.8311688311687"
+              Start="0,0"
+              End="0,29.3311688311687">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.3311688311687" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[No community area]"
+          TopLeft="419.333333333333,305">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-74.5378787878783,43.022727272727"
+              Start="0,0"
+              End="-74.5378787878783,35.522727272727">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.4662628778443" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.4662628778443"
+                    Point2="0,17.4662628778443"
+                    Point3="-4,17.4662628778443" />
+                  <mssgle:LineSegment
+                    End="-70.5378787878783,17.4662628778443" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-70.5378787878783,17.4662628778443"
+                    Point2="-74.5378787878783,17.4662628778443"
+                    Point3="-74.5378787878783,21.4662628778443" />
+                  <mssgle:LineSegment
+                    End="-74.5378787878783,35.522727272727" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-80.7522987689391,22.4662628778443,86.96671875,11.3310546875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Merge Join Output]"
+          TopLeft="821.727272727273,686.636363636364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.077922077922"
+              Start="0,0"
+              End="0,39.577922077922">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.577922077922" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Flat File Source Output1]"
+          TopLeft="818.62012987013,400.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.2727272727272"
+              Start="0,0"
+              End="0,55.7727272727272">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.7727272727272" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Flat File Source Output]"
+          TopLeft="446.5,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Data into PickupLocationSt.Paths[Flat File Source Error Output]"
           TopLeft="556,182.285714285714">
@@ -2232,102 +2584,32 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Import Data into PickupLocationSt\Conditional Split"
-          TopLeft="365,263" />
-        <EdgeLayout
-          Id="Package\Import Data into PickupLocationSt.Paths[Flat File Source Output]"
-          TopLeft="446.5,204">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59"
-              Start="0,0"
-              End="0,51.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Import Data into PickupLocationSt\Derived Column"
-          TopLeft="265.795454545455,348.022727272727" />
-        <EdgeLayout
-          Id="Package\Import Data into PickupLocationSt.Paths[No community area]"
-          TopLeft="419.333333333333,305">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-74.5378787878788,43.0227272727273"
-              Start="0,0"
-              End="-74.5378787878788,35.5227272727273">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.4662628778445" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.4662628778445"
-                    Point2="0,17.4662628778445"
-                    Point3="-4,17.4662628778445" />
-                  <mssgle:LineSegment
-                    End="-70.5378787878788,17.4662628778445" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-70.5378787878788,17.4662628778445"
-                    Point2="-74.5378787878788,17.4662628778445"
-                    Point3="-74.5378787878788,21.4662628778445" />
-                  <mssgle:LineSegment
-                    End="-74.5378787878788,35.5227272727273" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-80.7522987689394,22.4662628778445,86.96671875,11.3310546875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Import Data into PickupLocationSt\Union All"
-          TopLeft="410,430" />
         <EdgeLayout
           Id="Package\Import Data into PickupLocationSt.Paths[Derived Column Output]"
           TopLeft="344.795454545455,390.022727272727">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="107.537878787879,39.9772727272727"
+              EndConnector="107.537878787878,39.977272727273"
               Start="0,0"
-              End="107.537878787879,32.4772727272727">
+              End="107.537878787878,32.477272727273">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.6783525463301" />
+                    End="0,19.6783525463302" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.6783525463301"
-                    Point2="0,23.6783525463301"
-                    Point3="4,23.6783525463301" />
+                    Point1="0,19.6783525463302"
+                    Point2="0,23.6783525463302"
+                    Point3="4,23.6783525463302" />
                   <mssgle:LineSegment
-                    End="103.537878787879,23.6783525463301" />
+                    End="103.537878787878,23.6783525463302" />
                   <mssgle:CubicBezierSegment
-                    Point1="103.537878787879,23.6783525463301"
-                    Point2="107.537878787879,23.6783525463301"
-                    Point3="107.537878787879,27.6783525463301" />
+                    Point1="103.537878787878,23.6783525463302"
+                    Point2="107.537878787878,23.6783525463302"
+                    Point3="107.537878787878,27.6783525463302" />
                   <mssgle:LineSegment
-                    End="107.537878787879,32.4772727272727" />
+                    End="107.537878787878,32.477272727273" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2360,95 +2642,31 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="266,42"
-          Id="Package\Import Data into PickupLocationSt\Convert community area number to int"
-          TopLeft="336.363636363636,513.636363636364" />
-        <EdgeLayout
-          Id="Package\Import Data into PickupLocationSt.Paths[Union All Output 1]"
-          TopLeft="470.431818181818,472">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.6363636363636"
-              Start="0,0"
-              End="0,34.1363636363636">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.1363636363636" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="235,42"
-          Id="Package\Import Data into PickupLocationSt\Sort by community area number"
-          TopLeft="355.454545454546,597.272727272727" />
-        <EdgeLayout
-          Id="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output]"
-          TopLeft="471.159090909091,555.636363636364">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.6363636363636"
-              Start="0,0"
-              End="0,34.1363636363636">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.1363636363636" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Import Data into PickupLocationSt\Convert area number to int"
-          TopLeft="712.597402597402,412.987012987013" />
-        <EdgeLayout
-          Id="Package\Import Data into PickupLocationSt.Paths[Flat File Source Output1]"
-          TopLeft="817.62012987013,349.714285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,63.2727272727272"
-              Start="0,0"
-              End="0,55.7727272727272">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,55.7727272727272" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Import Data into PickupLocationSt\Merge Join"
-          TopLeft="755.454545454545,593.636363636364" />
-        <NodeLayout
-          Size="99,42"
-          Id="Package\Import Data into PickupLocationSt\Sort"
-          TopLeft="773.506493506493,514.805194805195" />
         <EdgeLayout
           Id="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output1]"
-          TopLeft="820.051948051948,454.987012987013">
+          TopLeft="823.5,775.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.142857142857"
+              Start="0,0"
+              End="0,36.642857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.642857142857" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output]"
+          TopLeft="821.051948051948,505.987012987013">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2468,106 +2686,46 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Data into PickupLocationSt.Paths[Sort Output]"
-          TopLeft="822.480519480519,556.805194805195">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.8311688311687"
-              Start="0,0"
-              End="0,29.3311688311687">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.3311688311687" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Data into PickupLocationSt.Paths[Sort Output1]"
-          TopLeft="590.454545454546,616.454545454546">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="165,0"
-              Start="0,0"
-              End="157.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="157.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="287,42"
-          Id="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal"
-          TopLeft="690,675.714285714286" />
-        <EdgeLayout
-          Id="Package\Import Data into PickupLocationSt.Paths[Merge Join Output]"
-          TopLeft="821.954545454545,635.636363636364">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="11.5454545454548,40.0779220779222"
-              Start="0,0"
-              End="11.5454545454548,32.5779220779222">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.0389610389611" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.0389610389611"
-                    Point2="0,20.0389610389611"
-                    Point3="4,20.0389610389611" />
-                  <mssgle:LineSegment
-                    End="7.54545454545485,20.0389610389611" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7.54545454545485,20.0389610389611"
-                    Point2="11.5454545454548,20.0389610389611"
-                    Point3="11.5454545454548,24.0389610389611" />
-                  <mssgle:LineSegment
-                    End="11.5454545454548,32.5779220779222" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Import Data into PickupLocationSt\Star schema database"
-          TopLeft="740,762.857142857143" />
+          Size="173,42"
+          Id="Package\Import Data into PickupLocationSt\Remove duplicates"
+          TopLeft="383,582" />
         <EdgeLayout
           Id="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output2]"
-          TopLeft="834,717.714285714286">
+          TopLeft="469.431818181818,555.636363636364">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.1428571428572"
+              EndConnector="0,26.363636363636"
               Start="0,0"
-              End="0,37.6428571428572">
+              End="0,18.863636363636">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.6428571428572" />
+                    End="0,18.863636363636" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Sort Output2]"
+          TopLeft="470.727272727273,624">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.272727272727"
+              Start="0,0"
+              End="0,16.772727272727">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.772727272727" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

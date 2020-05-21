@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{1FC30220-4AF1-47B5-80DE-DD7577103C99}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{E0A4B5D8-4005-4DC4-951E-E0736D5602CC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -314,7 +314,8 @@
                       refId="Package\Import data into TimeStartSt\Data Conversion.Inputs[Data Conversion Input].Columns[Trip Start Timestamp]"
                       cachedDataType="date"
                       cachedName="Trip Start Timestamp"
-                      lineageId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]" />
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Import data into TimeStartSt\Sort.Outputs[Sort Output].Columns[Trip Start Timestamp]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -339,7 +340,27 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import data into TimeStartSt\Sort.Outputs[Sort Output].Columns[Trip Start Timestamp]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output].Columns[TripStart Timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output].Columns[TripStart Timestamp]"
+                      name="TripStart Timestamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import data into TimeStartSt\Sort.Outputs[Sort Output].Columns[Trip Start Timestamp]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -390,7 +411,8 @@
                       refId="Package\Import data into TimeStartSt\Derived Column.Inputs[Derived Column Input].Columns[Trip Start Timestamp]"
                       cachedDataType="date"
                       cachedName="Trip Start Timestamp"
-                      lineageId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]" />
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Import data into TimeStartSt\Sort.Outputs[Sort Output].Columns[Trip Start Timestamp]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -416,7 +438,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[DAY](#{Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]})</property>
+                          name="Expression">[DAY](#{Package\Import data into TimeStartSt\Sort.Outputs[Sort Output].Columns[Trip Start Timestamp]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -438,7 +460,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[MONTH](#{Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]})</property>
+                          name="Expression">[MONTH](#{Package\Import data into TimeStartSt\Sort.Outputs[Sort Output].Columns[Trip Start Timestamp]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -460,7 +482,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[DATEPART]("wk",#{Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]})</property>
+                          name="Expression">[DATEPART]("wk",#{Package\Import data into TimeStartSt\Sort.Outputs[Sort Output].Columns[Trip Start Timestamp]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -482,7 +504,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">#{Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]}</property>
+                          name="Expression">#{Package\Import data into TimeStartSt\Sort.Outputs[Sort Output].Columns[Trip Start Timestamp]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -514,6 +536,74 @@
                       lineageId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import data into TimeStartSt\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import data into TimeStartSt\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import data into TimeStartSt\Sort.Inputs[Sort Input].Columns[Trip Start Timestamp]"
+                      cachedDataType="date"
+                      cachedName="Trip Start Timestamp"
+                      lineageId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import data into TimeStartSt\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data into TimeStartSt\Sort.Outputs[Sort Output].Columns[Trip Start Timestamp]"
+                      dataType="date"
+                      lineageId="Package\Import data into TimeStartSt\Sort.Outputs[Sort Output].Columns[Trip Start Timestamp]"
+                      name="Trip Start Timestamp"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output].Columns[Trip Start Timestamp]}</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -810,17 +900,23 @@
                       externalMetadataColumnId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[DayOfTheWeek]"
                       lineageId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[DayOfTheWeek]" />
                     <inputColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Date]"
+                      cachedDataType="date"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[Date]" />
+                    <inputColumn
                       refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].Columns[TimeStart]"
                       cachedDataType="dbTime"
                       cachedName="TimeStart"
                       externalMetadataColumnId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Time]"
                       lineageId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output].Columns[TimeStart]" />
                     <inputColumn
-                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Date]"
-                      cachedDataType="date"
-                      cachedName="Date"
-                      externalMetadataColumnId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Date]"
-                      lineageId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output].Columns[Date]" />
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].Columns[TripStart Timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TripStart Timestamp"
+                      externalMetadataColumnId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[TimestampStart]"
+                      lineageId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output].Columns[TripStart Timestamp]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -848,6 +944,10 @@
                       refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Time]"
                       dataType="dbTime2"
                       name="Time" />
+                    <externalMetadataColumn
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[TimestampStart]"
+                      dataType="dbTimeStamp"
+                      name="TimestampStart" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -890,9 +990,14 @@
               startId="Package\Import data into TimeStartSt\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Import data into TimeStartSt.Paths[Flat File Source Output]"
-              endId="Package\Import data into TimeStartSt\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\Import data into TimeStartSt\Sort.Inputs[Sort Input]"
               name="Flat File Source Output"
               startId="Package\Import data into TimeStartSt\Source file - TimeStart.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Import data into TimeStartSt.Paths[Sort Output]"
+              endId="Package\Import data into TimeStartSt\Derived Column.Inputs[Derived Column Input]"
+              name="Sort Output"
+              startId="Package\Import data into TimeStartSt\Sort.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -957,15 +1062,15 @@
     design-time-name="Package\Import data into TimeStartSt">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="158,42"
           Id="Package\Import data into TimeStartSt\Derived Column"
-          TopLeft="210,147" />
+          TopLeft="206,202" />
         <NodeLayout
           Size="189,42"
           Id="Package\Import data into TimeStartSt\Star schema database"
-          TopLeft="193,348" />
+          TopLeft="193,383" />
         <NodeLayout
           Size="188,42"
           Id="Package\Import data into TimeStartSt\Source file - TimeStart"
@@ -973,43 +1078,21 @@
         <NodeLayout
           Size="161,42"
           Id="Package\Import data into TimeStartSt\Data Conversion"
-          TopLeft="206,242" />
-        <EdgeLayout
-          Id="Package\Import data into TimeStartSt.Paths[Flat File Source Output]"
-          TopLeft="290.5,89">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,58"
-              Start="0,0"
-              End="0,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="206,293" />
         <EdgeLayout
           Id="Package\Import data into TimeStartSt.Paths[Derived Column Output]"
-          TopLeft="287.75,189">
+          TopLeft="285.75,244">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53"
+              EndConnector="0,49"
               Start="0,0"
-              End="0,45.5">
+              End="0,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.5" />
+                    End="0,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1020,18 +1103,66 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import data into TimeStartSt.Paths[Data Conversion Output]"
-          TopLeft="287,284">
+          TopLeft="287,335">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64"
+              EndConnector="0,48"
               Start="0,0"
-              End="0,56.5">
+              End="0,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.5" />
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Import data into TimeStartSt\Sort"
+          TopLeft="241,123" />
+        <EdgeLayout
+          Id="Package\Import data into TimeStartSt.Paths[Flat File Source Output]"
+          TopLeft="291.25,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data into TimeStartSt.Paths[Sort Output]"
+          TopLeft="287.75,165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

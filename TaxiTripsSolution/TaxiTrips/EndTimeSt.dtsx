@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{CA04EAC3-DAAA-4CC8-9C12-4EBAF0556445}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{6013F3A8-C78B-466A-928D-87B674C9C976}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -314,7 +314,8 @@
                       refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Trip End Timestamp]"
                       cachedDataType="date"
                       cachedName="Trip End Timestamp"
-                      lineageId="Package\Data Flow Task\Source file TimeEnd.Outputs[Flat File Source Output].Columns[Trip End Timestamp]" />
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Trip End Timestamp]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -339,7 +340,27 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Source file TimeEnd.Outputs[Flat File Source Output].Columns[Trip End Timestamp]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Trip End Timestamp]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[TripEnd Timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[TripEnd Timestamp]"
+                      name="TripEnd Timestamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Trip End Timestamp]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -390,7 +411,8 @@
                       refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[Trip End Timestamp]"
                       cachedDataType="date"
                       cachedName="Trip End Timestamp"
-                      lineageId="Package\Data Flow Task\Source file TimeEnd.Outputs[Flat File Source Output].Columns[Trip End Timestamp]" />
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Trip End Timestamp]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -416,7 +438,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[DAY](#{Package\Data Flow Task\Source file TimeEnd.Outputs[Flat File Source Output].Columns[Trip End Timestamp]})</property>
+                          name="Expression">[DAY](#{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Trip End Timestamp]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -438,7 +460,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[MONTH](#{Package\Data Flow Task\Source file TimeEnd.Outputs[Flat File Source Output].Columns[Trip End Timestamp]})</property>
+                          name="Expression">[MONTH](#{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Trip End Timestamp]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -460,7 +482,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[DATEPART]("wk",#{Package\Data Flow Task\Source file TimeEnd.Outputs[Flat File Source Output].Columns[Trip End Timestamp]})</property>
+                          name="Expression">[DATEPART]("wk",#{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Trip End Timestamp]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -482,7 +504,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">#{Package\Data Flow Task\Source file TimeEnd.Outputs[Flat File Source Output].Columns[Trip End Timestamp]}</property>
+                          name="Expression">#{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Trip End Timestamp]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -514,6 +536,74 @@
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[Trip End Timestamp]"
+                      cachedDataType="date"
+                      cachedName="Trip End Timestamp"
+                      lineageId="Package\Data Flow Task\Source file TimeEnd.Outputs[Flat File Source Output].Columns[Trip End Timestamp]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Trip End Timestamp]"
+                      dataType="date"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Trip End Timestamp]"
+                      name="Trip End Timestamp"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Source file TimeEnd.Outputs[Flat File Source Output].Columns[Trip End Timestamp]}</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -821,6 +911,12 @@
                       cachedName="TimeEnd"
                       externalMetadataColumnId="Package\Data Flow Task\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Time]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[TimeEnd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Star schema database.Inputs[ADO NET Destination Input].Columns[TripEnd Timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TripEnd Timestamp"
+                      externalMetadataColumnId="Package\Data Flow Task\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[TimestampEnd]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[TripEnd Timestamp]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -848,6 +944,10 @@
                       refId="Package\Data Flow Task\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Time]"
                       dataType="dbTime2"
                       name="Time" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[TimestampEnd]"
+                      dataType="dbTimeStamp"
+                      name="TimestampEnd" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -890,9 +990,14 @@
               startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\Data Flow Task\Sort.Inputs[Sort Input]"
               name="Flat File Source Output"
               startId="Package\Data Flow Task\Source file TimeEnd.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output]"
+              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\Sort.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -927,21 +1032,21 @@
         <NodeLayout
           Size="155,42"
           Id="Package\Data Flow Task"
-          TopLeft="396,170" />
+          TopLeft="399,194" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="474.25,105">
+          TopLeft="475.75,105">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,65"
+              EndConnector="0,89"
               Start="0,0"
-              End="0,57.5">
+              End="0,81.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.5" />
+                    End="0,81.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -957,11 +1062,11 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="158,42"
           Id="Package\Data Flow Task\Derived Column"
-          TopLeft="276,215" />
+          TopLeft="295,242" />
         <NodeLayout
           Size="189,42"
           Id="Package\Data Flow Task\Star schema database"
@@ -969,47 +1074,25 @@
         <NodeLayout
           Size="178,42"
           Id="Package\Data Flow Task\Source file TimeEnd"
-          TopLeft="273,90" />
+          TopLeft="286,90" />
         <NodeLayout
           Size="161,42"
           Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="280,336" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="358.5,132">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,83"
-              Start="0,0"
-              End="0,75.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,75.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="291,336" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="357.75,257">
+          TopLeft="372.75,284">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,79"
+              EndConnector="0,52"
               Start="0,0"
-              End="0,71.5">
+              End="0,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,71.5" />
+                    End="0,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1020,30 +1103,66 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="360.5,378">
+          TopLeft="372.5,378">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="13,51"
+              EndConnector="0,51"
               Start="0,0"
-              End="13,43.5">
+              End="0,43.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.5"
-                    Point2="0,25.5"
-                    Point3="4,25.5" />
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Data Flow Task\Sort"
+          TopLeft="325,164" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="374.75,132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="9,25.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9,25.5"
-                    Point2="13,25.5"
-                    Point3="13,29.5" />
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output]"
+          TopLeft="374.25,206">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="13,43.5" />
+                    End="0,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
