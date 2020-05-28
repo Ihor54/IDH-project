@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{E282961D-09C7-4A27-8F9B-749242D5F8A0}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{367315C1-A951-4D5A-89EB-B9CDFEF208E9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -394,6 +394,233 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=IDH;Integrated Security=True;Application Name=SSIS-Package1-{37B2C812-2F8D-4FD6-B1AE-5F650AB30FA1}localhost\SQLEXPRESS.IDH1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Taxi trips  Connection Manager 3]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{696797AB-A4F9-4BB4-AA1B-897933067D75}"
+      DTS:ObjectName="Taxi trips  Connection Manager 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="E:\PJATK studies\Masters\IDH\IDH project\Taxi_Trips_-_2020.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip ID"
+              DTS:DTSID="{9A66CF02-B176-4A47-AA45-2E12AF49A2BF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Taxi ID"
+              DTS:DTSID="{768D7920-6E0A-46A0-98DE-0A87D5B845FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Start Timestamp"
+              DTS:DTSID="{97378D23-3643-4C4F-8BAE-3C73A92CC534}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip End Timestamp"
+              DTS:DTSID="{1B60FFE9-8F22-4333-8917-A15708D15919}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Seconds"
+              DTS:DTSID="{810B9744-9888-4CB2-A529-C908A255F9A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Miles"
+              DTS:DTSID="{4AFFD335-4C1D-4F6F-9AAD-2A12CC0B2B61}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Census Tract"
+              DTS:DTSID="{8AF12E7D-B2C3-476B-AE29-3E621602012A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Census Tract"
+              DTS:DTSID="{9FF00325-1360-4955-9477-027A8D72A2C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Community Area"
+              DTS:DTSID="{6D5E01D5-45E0-4A9C-822F-10AC8A68B89A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Community Area"
+              DTS:DTSID="{A7C6E95E-9B37-4CB7-AC29-AF11CF24FD80}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fare"
+              DTS:DTSID="{92720111-8367-4BF8-9EB4-8B3B5206F3DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tips"
+              DTS:DTSID="{CBE7F341-F77D-4C4B-840D-5D07B9765322}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tolls"
+              DTS:DTSID="{79690C5E-14AC-437C-8FBD-0FD36252E340}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Extras"
+              DTS:DTSID="{39D0A136-2362-42F3-9FB1-070EAF4FF9C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Total"
+              DTS:DTSID="{7B2113CA-50D2-45AB-8515-A7AB9728E0D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Payment Type"
+              DTS:DTSID="{30AB9E7B-43E8-45DB-B326-A08492E8ED81}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Company"
+              DTS:DTSID="{D33E53C8-E977-4D0B-9692-15A58E1DD8A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Latitude"
+              DTS:DTSID="{3A075007-DF92-4558-8B02-2AADBC8D4F02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Longitude"
+              DTS:DTSID="{B95145AA-0E31-4EE8-A41A-BD98EACDA236}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Location"
+              DTS:DTSID="{6A85B5B3-07F9-4AF9-9BC9-C6CFE1F403FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid Latitude"
+              DTS:DTSID="{588E5921-3AAD-4FD6-A90A-69CC264A3103}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid Longitude"
+              DTS:DTSID="{9AA9E145-944D-41C8-A15D-A4BED0B58722}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid  Location"
+              DTS:DTSID="{91FB92D6-BF3C-43E3-A922-A165A5DCCF6D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -1796,8 +2023,8 @@
               <connections>
                 <connection
                   refId="Package\Import data into DropoffLocationSt\Source data - DropoffLocation.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Csv_test Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Csv_test Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[Taxi trips  Connection Manager 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[Taxi trips  Connection Manager 3]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -2108,14 +2335,6 @@
                       externalMetadataColumnId="Package\Import data into DropoffLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[DropoffCommunityAreaName]"
                       lineageId="Package\Import data into DropoffLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Dropoff Community Area Name]" />
                     <inputColumn
-                      refId="Package\Import data into DropoffLocationSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Copy of Dropoff Centroid Longitude]"
-                      cachedDataType="numeric"
-                      cachedName="Copy of Dropoff Centroid Longitude"
-                      cachedPrecision="12"
-                      cachedScale="9"
-                      externalMetadataColumnId="Package\Import data into DropoffLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[DropoffLongtitude]"
-                      lineageId="Package\Import data into DropoffLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output].Columns[Copy of Dropoff Centroid Longitude]" />
-                    <inputColumn
                       refId="Package\Import data into DropoffLocationSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Copy of Dropoff Centroid Latitude]"
                       cachedDataType="numeric"
                       cachedName="Copy of Dropoff Centroid Latitude"
@@ -2123,6 +2342,14 @@
                       cachedScale="9"
                       externalMetadataColumnId="Package\Import data into DropoffLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[DropoffLatitude]"
                       lineageId="Package\Import data into DropoffLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output].Columns[Copy of Dropoff Centroid Latitude]" />
+                    <inputColumn
+                      refId="Package\Import data into DropoffLocationSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Copy of Dropoff Centroid Longitude]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Dropoff Centroid Longitude"
+                      cachedPrecision="12"
+                      cachedScale="9"
+                      externalMetadataColumnId="Package\Import data into DropoffLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[DropoffLongtitude]"
+                      lineageId="Package\Import data into DropoffLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output].Columns[Copy of Dropoff Centroid Longitude]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2474,21 +2701,25 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="232,42"
-          Id="Package\Import data into DropoffLocationSt\Source CommunityArea names"
-          TopLeft="808,314" />
+          Size="226,42"
+          Id="Package\Import data into DropoffLocationSt\Save data convertion error log"
+          TopLeft="1193,672" />
         <NodeLayout
           Size="287,42"
           Id="Package\Import data into DropoffLocationSt\Convert longitude and latitude into decimal"
           TopLeft="768,675" />
         <NodeLayout
-          Size="237,42"
-          Id="Package\Import data into DropoffLocationSt\Sort by Community area number"
-          TopLeft="429,566" />
+          Size="123,42"
+          Id="Package\Import data into DropoffLocationSt\Union All"
+          TopLeft="483,317" />
         <NodeLayout
-          Size="158,42"
-          Id="Package\Import data into DropoffLocationSt\Saving ErrorLog"
-          TopLeft="787,96" />
+          Size="99,42"
+          Id="Package\Import data into DropoffLocationSt\Sort"
+          TopLeft="871,470" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Import data into DropoffLocationSt\Convert area number to int"
+          TopLeft="815,391" />
         <NodeLayout
           Size="266,42"
           Id="Package\Import data into DropoffLocationSt\Convert community area number to int"
@@ -2502,33 +2733,33 @@
           Id="Package\Import data into DropoffLocationSt\Merge Join"
           TopLeft="854,566" />
         <NodeLayout
-          Size="225,42"
-          Id="Package\Import data into DropoffLocationSt\Source data - DropoffLocation"
-          TopLeft="421,97" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Import data into DropoffLocationSt\Convert area number to int"
-          TopLeft="815,391" />
+          Size="158,42"
+          Id="Package\Import data into DropoffLocationSt\Saving ErrorLog"
+          TopLeft="787,96" />
         <NodeLayout
           Size="158,42"
           Id="Package\Import data into DropoffLocationSt\Derived Column"
           TopLeft="311,269" />
         <NodeLayout
-          Size="226,42"
-          Id="Package\Import data into DropoffLocationSt\Save data convertion error log"
-          TopLeft="1193,672" />
+          Size="173,42"
+          Id="Package\Import data into DropoffLocationSt\Remove duplicates"
+          TopLeft="458,482" />
         <NodeLayout
-          Size="123,42"
-          Id="Package\Import data into DropoffLocationSt\Union All"
-          TopLeft="483,317" />
+          Size="232,42"
+          Id="Package\Import data into DropoffLocationSt\Source CommunityArea names"
+          TopLeft="808,314" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Import data into DropoffLocationSt\Source data - DropoffLocation"
+          TopLeft="421,97" />
+        <NodeLayout
+          Size="237,42"
+          Id="Package\Import data into DropoffLocationSt\Sort by Community area number"
+          TopLeft="429,566" />
         <NodeLayout
           Size="159,42"
           Id="Package\Import data into DropoffLocationSt\Conditional Split"
           TopLeft="452,169" />
-        <NodeLayout
-          Size="99,42"
-          Id="Package\Import data into DropoffLocationSt\Sort"
-          TopLeft="871,470" />
         <EdgeLayout
           Id="Package\Import data into DropoffLocationSt.Paths[Union All Output 1]"
           TopLeft="546.25,359">
@@ -2543,6 +2774,28 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data into DropoffLocationSt.Paths[Sort Output2]"
+          TopLeft="546,524">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2786,6 +3039,28 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Import data into DropoffLocationSt.Paths[Data Conversion Output2]"
+          TopLeft="546.25,449">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Import data into DropoffLocationSt.Paths[Data Conversion Output1]"
           TopLeft="914.5,717">
           <EdgeLayout.Curve>
@@ -2851,54 +3126,6 @@
             <mssgm:EdgeLabel
               BoundingBox="-0.836386718749992,5,132.1727734375,11.43359375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Import data into DropoffLocationSt\Remove duplicates"
-          TopLeft="458,482" />
-        <EdgeLayout
-          Id="Package\Import data into DropoffLocationSt.Paths[Data Conversion Output2]"
-          TopLeft="546.25,449">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33"
-              Start="0,0"
-              End="0,25.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import data into DropoffLocationSt.Paths[Sort Output2]"
-          TopLeft="546,524">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

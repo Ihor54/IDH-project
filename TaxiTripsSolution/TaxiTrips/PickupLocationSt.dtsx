@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{CAA213D1-062A-4322-94A9-556E3D7FA84E}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{4308CE55-6F2A-4400-A387-4AD4BA4E18FD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -175,6 +175,233 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=IDH;Integrated Security=True;Application Name=SSIS-Package1-{84C5EA8C-8AA6-46AA-B0DF-7D89402CECBF}localhost\SQLEXPRESS.IDH1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Taxi trips Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C711E533-9E95-49DA-AA89-625C687EAA80}"
+      DTS:ObjectName="Taxi trips Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="E:\PJATK studies\Masters\IDH\IDH project\Taxi_Trips_-_2020.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip ID"
+              DTS:DTSID="{1697D6CD-DD9C-43B5-9393-E6565387127A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Taxi ID"
+              DTS:DTSID="{E83E357E-4AD1-413D-8517-841ECD17AFD5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Start Timestamp"
+              DTS:DTSID="{82BDB86A-9342-4B4E-B4FF-C941F85A162C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip End Timestamp"
+              DTS:DTSID="{2C3F5FA8-0915-452E-B205-BD9FFD46AC99}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Seconds"
+              DTS:DTSID="{B0CD040C-D225-4670-B6C9-46BCC4AB30B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Miles"
+              DTS:DTSID="{635752B9-7661-43A2-8EC3-179CD1FDF0B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Census Tract"
+              DTS:DTSID="{CA00A26E-1A77-49D1-A42F-54C160610CAD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Census Tract"
+              DTS:DTSID="{08DDB0D9-12EE-454D-BA71-79D21B88B2D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Community Area"
+              DTS:DTSID="{D1023A9D-45F7-4FD5-AA01-D89255AF45E1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Community Area"
+              DTS:DTSID="{A25C6782-46AC-43CA-BA8E-0F67EC36D310}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fare"
+              DTS:DTSID="{5F895E47-58E4-47EE-8785-E3A38DC2ABAE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tips"
+              DTS:DTSID="{CDF5F6BD-C740-4D0C-B89B-93318D567928}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tolls"
+              DTS:DTSID="{6DCEE1C0-E76E-4187-9931-14424115F91C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Extras"
+              DTS:DTSID="{6869DBE0-6C20-4D21-BD91-8810F67525E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Total"
+              DTS:DTSID="{94502766-FAAB-445F-A55E-DDDE2FE1EA41}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Payment Type"
+              DTS:DTSID="{1748AD8E-D5CA-4448-8932-A00334FECC9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Company"
+              DTS:DTSID="{66FD0CCE-C550-4DAD-9C22-8FD137988B9A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Latitude"
+              DTS:DTSID="{F587222A-5CC8-4C69-9773-4D01CEABA9D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Longitude"
+              DTS:DTSID="{CEAD6499-384A-4B44-A7FF-3E157BE5B1E1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Location"
+              DTS:DTSID="{5C4E7B2F-5774-4908-8664-73D854612EF3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid Latitude"
+              DTS:DTSID="{1A050F88-903E-4C55-BF3A-E5D866005298}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid Longitude"
+              DTS:DTSID="{9CB03AE7-8B73-4A8F-83E4-EDDDD19FDEE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid  Location"
+              DTS:DTSID="{E0462EDD-4CF2-411A-8173-207117F08C0C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -651,10 +878,10 @@
                       refId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Output].Columns[Copy of Pickup Community Area]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       lineageId="Package\Import Data into PickupLocationSt\Convert community area number to int.Outputs[Data Conversion Output].Columns[Copy of Pickup Community Area]"
                       name="Copy of Pickup Community Area"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           containsID="true"
@@ -1667,8 +1894,8 @@
               <connections>
                 <connection
                   refId="Package\Import Data into PickupLocationSt\Source file - PickupLocation.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[test_csv_manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[test_csv_manager]"
+                  connectionManagerID="Package.ConnectionManagers[Taxi trips Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Taxi trips Connection Manager]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -1964,6 +2191,13 @@
                   name="ADO NET Destination Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Pickup Community Area]"
+                      cachedDataType="i4"
+                      cachedName="Pickup Community Area"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[PickupCommunityArea]"
+                      lineageId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Community Area]" />
+                    <inputColumn
                       refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Pickup Community Area Name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -1972,12 +2206,13 @@
                       externalMetadataColumnId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[PickupCommunityAreaName]"
                       lineageId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Community Area Name]" />
                     <inputColumn
-                      refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Pickup Community Area]"
-                      cachedDataType="i4"
-                      cachedName="Pickup Community Area"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[PickupCommunityArea]"
-                      lineageId="Package\Import Data into PickupLocationSt\Merge Join.Outputs[Merge Join Output].Columns[Pickup Community Area]" />
+                      refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Copy of Pickup Centroid Latitude]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Pickup Centroid Latitude"
+                      cachedPrecision="12"
+                      cachedScale="9"
+                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[PickupLatitude]"
+                      lineageId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output].Columns[Copy of Pickup Centroid Latitude]" />
                     <inputColumn
                       refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Copy of Pickup Centroid Longitude]"
                       cachedDataType="numeric"
@@ -1986,14 +2221,6 @@
                       cachedScale="9"
                       externalMetadataColumnId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[PickupLongtitude]"
                       lineageId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output].Columns[Copy of Pickup Centroid Longitude]" />
-                    <inputColumn
-                      refId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].Columns[Copy of Pickup Centroid Latitude]"
-                      cachedDataType="numeric"
-                      cachedName="Copy of Pickup Centroid Latitude"
-                      cachedPrecision="12"
-                      cachedScale="9"
-                      externalMetadataColumnId="Package\Import Data into PickupLocationSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[PickupLatitude]"
-                      lineageId="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal.Outputs[Data Conversion Output].Columns[Copy of Pickup Centroid Latitude]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2345,6 +2572,10 @@
           Id="Package\Import Data into PickupLocationSt\Convert longitude and latitude into decimal"
           TopLeft="677,733.714285714286" />
         <NodeLayout
+          Size="195,42"
+          Id="Package\Import Data into PickupLocationSt\Save data into ErrorLog"
+          TopLeft="693.142857142857,160.571428571429" />
+        <NodeLayout
           Size="133,42"
           Id="Package\Import Data into PickupLocationSt\Merge Join"
           TopLeft="756.454545454545,644.636363636364" />
@@ -2353,17 +2584,13 @@
           Id="Package\Import Data into PickupLocationSt\Convert community area number to int"
           TopLeft="336.363636363636,513.636363636364" />
         <NodeLayout
-          Size="99,42"
-          Id="Package\Import Data into PickupLocationSt\Sort"
-          TopLeft="774.506493506493,565.805194805195" />
-        <NodeLayout
-          Size="232,42"
-          Id="Package\Import Data into PickupLocationSt\Source CommunityArea names"
-          TopLeft="703.142857142857,358.714285714286" />
-        <NodeLayout
           Size="235,42"
           Id="Package\Import Data into PickupLocationSt\Sort by community area number"
           TopLeft="354.454545454546,648.272727272727" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Import Data into PickupLocationSt\Source file - PickupLocation"
+          TopLeft="341,162" />
         <NodeLayout
           Size="209,42"
           Id="Package\Import Data into PickupLocationSt\Convert area number to int"
@@ -2373,91 +2600,29 @@
           Id="Package\Import Data into PickupLocationSt\Derived Column"
           TopLeft="265.795454545455,348.022727272727" />
         <NodeLayout
-          Size="195,42"
-          Id="Package\Import Data into PickupLocationSt\Save data into ErrorLog"
-          TopLeft="693.142857142857,160.571428571429" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Import Data into PickupLocationSt\Star schema database"
-          TopLeft="732,819.857142857143" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Import Data into PickupLocationSt\Conditional Split"
-          TopLeft="365,263" />
+          Size="173,42"
+          Id="Package\Import Data into PickupLocationSt\Remove duplicates"
+          TopLeft="383,582" />
         <NodeLayout
           Size="123,42"
           Id="Package\Import Data into PickupLocationSt\Union All"
           TopLeft="410,430" />
         <NodeLayout
-          Size="215,42"
-          Id="Package\Import Data into PickupLocationSt\Source file - PickupLocation"
-          TopLeft="341,162" />
-        <EdgeLayout
-          Id="Package\Import Data into PickupLocationSt.Paths[Union All Output 1]"
-          TopLeft="470.431818181818,472">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.6363636363636"
-              Start="0,0"
-              End="0,34.1363636363636">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.1363636363636" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Data into PickupLocationSt.Paths[Sort Output1]"
-          TopLeft="589.454545454546,667.454545454546">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="166.999999999999,0"
-              Start="0,0"
-              End="159.499999999999,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="159.499999999999,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Data into PickupLocationSt.Paths[Sort Output]"
-          TopLeft="823.480519480519,607.805194805195">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.8311688311687"
-              Start="0,0"
-              End="0,29.3311688311687">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.3311688311687" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="99,42"
+          Id="Package\Import Data into PickupLocationSt\Sort"
+          TopLeft="774.506493506493,565.805194805195" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Import Data into PickupLocationSt\Source CommunityArea names"
+          TopLeft="703.142857142857,358.714285714286" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Import Data into PickupLocationSt\Conditional Split"
+          TopLeft="365,263" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Import Data into PickupLocationSt\Star schema database"
+          TopLeft="732,819.857142857143" />
         <EdgeLayout
           Id="Package\Import Data into PickupLocationSt.Paths[No community area]"
           TopLeft="419.333333333333,305">
@@ -2580,7 +2745,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="1.19504185267856,5,127.2527734375,11.609375"
+              BoundingBox="1.19504185267851,5,127.2527734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2643,6 +2808,28 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output2]"
+          TopLeft="469.431818181818,555.636363636364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.363636363636"
+              Start="0,0"
+              End="0,18.863636363636">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.863636363636" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output1]"
           TopLeft="823.5,775.714285714286">
           <EdgeLayout.Curve>
@@ -2686,24 +2873,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Import Data into PickupLocationSt\Remove duplicates"
-          TopLeft="383,582" />
         <EdgeLayout
-          Id="Package\Import Data into PickupLocationSt.Paths[Data Conversion Output2]"
-          TopLeft="469.431818181818,555.636363636364">
+          Id="Package\Import Data into PickupLocationSt.Paths[Union All Output 1]"
+          TopLeft="470.431818181818,472">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26.363636363636"
+              EndConnector="0,41.6363636363636"
               Start="0,0"
-              End="0,18.863636363636">
+              End="0,34.1363636363636">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.863636363636" />
+                    End="0,34.1363636363636" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2726,6 +2909,50 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,16.772727272727" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Sort Output1]"
+          TopLeft="589.454545454546,667.454545454546">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="166.999999999999,0"
+              Start="0,0"
+              End="159.499999999999,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="159.499999999999,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Data into PickupLocationSt.Paths[Sort Output]"
+          TopLeft="823.480519480519,607.805194805195">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.8311688311687"
+              Start="0,0"
+              End="0,29.3311688311687">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.3311688311687" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

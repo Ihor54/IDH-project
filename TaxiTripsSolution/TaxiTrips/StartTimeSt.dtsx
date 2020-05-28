@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{E0A4B5D8-4005-4DC4-951E-E0736D5602CC}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{473B5CE8-CC0D-4BD0-B008-1D6BAE45BAA0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -253,6 +253,233 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Taxi trips Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{25038F8F-B09D-4B1B-92DE-2EA2057C74DF}"
+      DTS:ObjectName="Taxi trips Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="E:\PJATK studies\Masters\IDH\IDH project\Taxi_Trips_-_2020.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip ID"
+              DTS:DTSID="{458B4F9A-8B86-4510-A231-153F4597EEF0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Taxi ID"
+              DTS:DTSID="{D6B6C919-2749-423C-B716-14B7539F79F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Start Timestamp"
+              DTS:DTSID="{A6A8F702-BF53-428E-9153-8590048BDE63}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip End Timestamp"
+              DTS:DTSID="{0B0D51CC-7280-4351-BE84-13D71863C296}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Seconds"
+              DTS:DTSID="{072B7E06-CACB-4075-A489-117F5435186A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Miles"
+              DTS:DTSID="{042E5F6A-1580-4FE1-8B3E-ACCD33223E73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Census Tract"
+              DTS:DTSID="{FE0252AF-9B75-466B-84BC-F930703E374E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Census Tract"
+              DTS:DTSID="{756B22C2-3ACB-421B-975B-A2DF89D09A4C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Community Area"
+              DTS:DTSID="{BEFF1BB4-7749-48D6-B2E7-FB7EFD6E1CE3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Community Area"
+              DTS:DTSID="{5A03A36D-E9EC-41E4-A71B-CD43EC8B2031}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fare"
+              DTS:DTSID="{771E1D94-5A33-4C77-ACCA-E78F3E6435AF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tips"
+              DTS:DTSID="{2983C978-E099-416D-BD5C-49154028EECF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tolls"
+              DTS:DTSID="{FF29187B-6936-4686-8C5C-DDED25E93720}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Extras"
+              DTS:DTSID="{65E1987B-AAB2-4A66-811D-226250A5BDED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip Total"
+              DTS:DTSID="{1028A0B5-46CC-4DC9-9483-EE0E64C3BA42}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Payment Type"
+              DTS:DTSID="{D6CC7E08-AEDB-4BBD-9ED6-DDF6F6E1EF12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Company"
+              DTS:DTSID="{971C2FEF-CD7F-43D8-80B2-4F808BDCF4EF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Latitude"
+              DTS:DTSID="{2689A2A9-21F7-455B-81AE-8CA6EBCA8646}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Longitude"
+              DTS:DTSID="{A16CDBBC-65A4-40AF-90B3-2D2ECFEC55A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup Centroid Location"
+              DTS:DTSID="{7AEBE1FA-BD86-45AF-A4F9-C4ADF781A360}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid Latitude"
+              DTS:DTSID="{04587698-C87F-4C3B-AB50-1B6610491AEE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid Longitude"
+              DTS:DTSID="{19101340-6567-4667-BC06-F3A2052F319F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropoff Centroid  Location"
+              DTS:DTSID="{D8D188D7-D6DC-4CEA-AB2F-37412AE6479A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
@@ -348,12 +575,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output].Columns[TripStart Timestamp]"
+                      refId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output].Columns[TripStart Timestamp Result.]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output].Columns[TripStart Timestamp]"
-                      name="TripStart Timestamp"
+                      lineageId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output].Columns[TripStart Timestamp Result.]"
+                      name="TripStart Timestamp Result."
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -631,8 +858,8 @@
               <connections>
                 <connection
                   refId="Package\Import data into TimeStartSt\Source file - TimeStart.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Source file Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Source file Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[Taxi trips Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Taxi trips Connection Manager]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -912,11 +1139,11 @@
                       externalMetadataColumnId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[Time]"
                       lineageId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output].Columns[TimeStart]" />
                     <inputColumn
-                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].Columns[TripStart Timestamp]"
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].Columns[TripStart Timestamp Result.]"
                       cachedDataType="dbTimeStamp"
-                      cachedName="TripStart Timestamp"
-                      externalMetadataColumnId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[TimestampStart]"
-                      lineageId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output].Columns[TripStart Timestamp]" />
+                      cachedName="TripStart Timestamp Result."
+                      externalMetadataColumnId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[StartTimestamp]"
+                      lineageId="Package\Import data into TimeStartSt\Data Conversion.Outputs[Data Conversion Output].Columns[TripStart Timestamp Result.]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -945,9 +1172,9 @@
                       dataType="dbTime2"
                       name="Time" />
                     <externalMetadataColumn
-                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[TimestampStart]"
+                      refId="Package\Import data into TimeStartSt\Star schema database.Inputs[ADO NET Destination Input].ExternalColumns[StartTimestamp]"
                       dataType="dbTimeStamp"
-                      name="TimestampStart" />
+                      name="StartTimestamp" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1070,7 +1297,7 @@
         <NodeLayout
           Size="189,42"
           Id="Package\Import data into TimeStartSt\Star schema database"
-          TopLeft="193,383" />
+          TopLeft="189,387" />
         <NodeLayout
           Size="188,42"
           Id="Package\Import data into TimeStartSt\Source file - TimeStart"
@@ -1079,6 +1306,10 @@
           Size="161,42"
           Id="Package\Import data into TimeStartSt\Data Conversion"
           TopLeft="206,293" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Import data into TimeStartSt\Sort"
+          TopLeft="241,123" />
         <EdgeLayout
           Id="Package\Import data into TimeStartSt.Paths[Derived Column Output]"
           TopLeft="285.75,244">
@@ -1103,44 +1334,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import data into TimeStartSt.Paths[Data Conversion Output]"
-          TopLeft="287,335">
+          TopLeft="285,335">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48"
+              EndConnector="0,52"
               Start="0,0"
-              End="0,40.5">
+              End="0,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="99,42"
-          Id="Package\Import data into TimeStartSt\Sort"
-          TopLeft="241,123" />
-        <EdgeLayout
-          Id="Package\Import data into TimeStartSt.Paths[Flat File Source Output]"
-          TopLeft="291.25,89">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34"
-              Start="0,0"
-              End="0,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
+                    End="0,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1163,6 +1368,28 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data into TimeStartSt.Paths[Flat File Source Output]"
+          TopLeft="291.25,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
